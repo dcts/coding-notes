@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CSS - Html/CSS notes</title>
+        <title>LINUX Basics - bash-linux</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li><ol class="section"><li><a href="html_structure.html"><strong aria-hidden="true">1.1.</strong> Structure</a></li><li><a href="html_meta_tags.html"><strong aria-hidden="true">1.2.</strong> Meta Tags</a></li><li><a href="html_mainTags.html"><strong aria-hidden="true">1.3.</strong> Main Tags</a></li></ol></li><li><a href="css.html" class="active"><strong aria-hidden="true">2.</strong> CSS</a></li><li><a href="js.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li></ol>
+            <ol class="chapter"><li><a href="linux.html" class="active"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts_and_vim.html"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts + VIM</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_installing_packages.html"><strong aria-hidden="true">2.6.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html"><strong aria-hidden="true">2.7.</strong> Users and Permissions</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -102,7 +102,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Html/CSS notes</h1> 
+                        <h1 class="menu-title">bash-linux</h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -136,20 +136,143 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#css" id="css"><h1>CSS</h1></a>
+                        <a class="header" href="#linux-basics" id="linux-basics"><h1>LINUX Basics</h1></a>
+<p>In Linux, everything is a file.</p>
+<a class="header" href="#ubuntu-shortcuts" id="ubuntu-shortcuts"><h2>UBUNTU Shortcuts</h2></a>
+<pre><code class="language-bash">SHIFT + ALT + T              # opens Terminal
+CTRL + ALT + SHIFT + K       # computer shutdown (custom shortcut)
+</code></pre>
+<a class="header" href="#ubuntu-folderstructure" id="ubuntu-folderstructure"><h2>UBUNTU Folderstructure</h2></a>
+<ul>
+<li><strong>/bin</strong> binaries
+<ul>
+<li>executable files (you can call them from terminal)</li>
+<li>binary (ready to run, not readable for humans)</li>
+<li>essential (a lot of system needed programs)</li>
+</ul>
+</li>
+<li><strong>/boot</strong> boot files
+<ul>
+<li>linux kernel (<strong>/boot/vmlinuz</strong>)</li>
+<li>initial RAM disk image</li>
+<li>boot loader (GRUB -&gt; <strong>/boot/grub/grub.conf</strong>)</li>
+</ul>
+</li>
+<li><strong>/dev</strong> device nodes
+<ul>
+<li>all devices represented here as files</li>
+<li><strong>/dev/sda1</strong> (sda -&gt; name of disk)</li>
+<li>usb devices / cpu / etc...</li>
+</ul>
+</li>
+<li><strong>/etc</strong> configuration files
+<ul>
+<li>system-wide configuration files</li>
+<li>some shell scripts</li>
+<li>all files are human readable</li>
+</ul>
+</li>
+<li><strong>/home</strong> users folders
+<ul>
+<li>each user has its own user-folder here</li>
+<li>private data, pictures, videos etc...</li>
+</ul>
+</li>
+<li><strong>/lib</strong> libraries
+<ul>
+<li>libraries required by the programs in <strong>/bin</strong> folder</li>
+<li>(library is a set of functions that are shared between programs)</li>
+</ul>
+</li>
+<li><strong>/lost+found</strong> recovered files
+<ul>
+<li>only exists when using ext4 file system (most linux distros use it)</li>
+<li>recovery folder used by the ext4 file system</li>
+<li>seperate folder for every ext4 partition</li>
+<li>empty unless something happens (used for recovery)</li>
+</ul>
+</li>
+<li><strong>/media</strong> automatic mount point
+<ul>
+<li>automatic mounting of removable media such as USB drives, CD-ROM etc.</li>
+<li>when properly setup usb drives should appear here!</li>
+<li>mounting = accessing</li>
+</ul>
+</li>
+<li><strong>/mnt</strong> manual mount point
+<ul>
+<li>similar to <strong>/media</strong> folder, but its usually used for manual mounting</li>
+</ul>
+</li>
+<li><strong>/opt</strong> optional software
+<ul>
+<li>not essential</li>
+<li>often used to install commercial programs (dropbox etc.)</li>
+</ul>
+</li>
+<li><strong>/proc</strong> kernel files
+<ul>
+<li>virtual file-system for the linux kernel</li>
+<li>not touched by a user</li>
+</ul>
+</li>
+<li><strong>/root</strong> root home
+<ul>
+<li>do not mix with /</li>
+<li>the same as your user home directory but its for the root account!</li>
+</ul>
+</li>
+<li><strong>/run</strong> early temp
+<ul>
+<li>recently introduced</li>
+<li>tempoirary file-system</li>
+<li>used early in system boot (before other temp folder become availible!)</li>
+</ul>
+</li>
+<li><strong>/sbin</strong> system binaries
+<ul>
+<li>binaries</li>
+<li>essential</li>
+<li>run by the super user</li>
+</ul>
+</li>
+<li><strong>/srv</strong> service data
+<ul>
+<li>service files installed on your system</li>
+<li>for example a http webserver</li>
+</ul>
+</li>
+<li><strong>/tmp</strong> temporary files
+<ul>
+<li>temporary files</li>
+<li>this directory is usually cleaned on reboot</li>
+</ul>
+</li>
+<li><strong>/usr</strong> user binaries
+<ul>
+<li>the largest folder after <strong>/home</strong></li>
+<li>contains all programs used by a regular user (thousands of programs)</li>
+<li><strong>/usr/bin</strong> binaries of programs installed by your distro</li>
+<li><strong>/usr/lib</strong> libraries used by the binaries</li>
+<li><strong>/usr/share/doc</strong> documentation files for programs installed on system</li>
+</ul>
+</li>
+<li><strong>/var</strong> variable files
+<ul>
+<li>files that change all the time</li>
+<li><strong>/var/log</strong> stores log files (that monitors processes)</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="html_mainTags.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        
 
                         
-                            <a rel="next" href="js.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="bash.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -161,13 +284,9 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="html_mainTags.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                
 
                 
-                    <a href="js.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="bash.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

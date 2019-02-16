@@ -14,4 +14,3 @@ the basic structure of a document looks like this:
 </body>
 </html>
 ```
-

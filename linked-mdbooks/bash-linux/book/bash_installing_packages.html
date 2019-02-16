@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>CSS - Html/CSS notes</title>
+        <title>Installing Packages - bash-linux</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li><ol class="section"><li><a href="html_structure.html"><strong aria-hidden="true">1.1.</strong> Structure</a></li><li><a href="html_meta_tags.html"><strong aria-hidden="true">1.2.</strong> Meta Tags</a></li><li><a href="html_mainTags.html"><strong aria-hidden="true">1.3.</strong> Main Tags</a></li></ol></li><li><a href="css.html" class="active"><strong aria-hidden="true">2.</strong> CSS</a></li><li><a href="js.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li></ol>
+            <ol class="chapter"><li><a href="linux.html"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts_and_vim.html"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts + VIM</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_installing_packages.html" class="active"><strong aria-hidden="true">2.6.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html"><strong aria-hidden="true">2.7.</strong> Users and Permissions</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -102,7 +102,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Html/CSS notes</h1> 
+                        <h1 class="menu-title">bash-linux</h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -136,20 +136,58 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#css" id="css"><h1>CSS</h1></a>
+                        <a class="header" href="#installing-packages" id="installing-packages"><h1>Installing Packages</h1></a>
+<p><strong>What's a Package Manager?</strong></p>
+<p>A package manager serves as the onboard tool for accessing online software catalogs and installing, updating and removing packages from your Linux environment.</p>
+<p>There's more than one package manager on the market, and their packages aren't easily cross-compatible. Furthermore, not all packages exist in every package manager's catalog.</p>
+<p>Common package management systems include:</p>
+<ul>
+<li>dkpg: Used by Debian and Ubuntu, and supported by tools like apt, aptitude, and the Synaptic Package Manager</li>
+<li>Pacman: Used by Arch Linux</li>
+<li>Portage: Used by Gentoo Linux</li>
+<li>Snappy: A relatively new, self-contained package format developed by Ubuntu's parent company</li>
+<li>RPM Package Manager: Developed by Red Hat and supported by tools like YUM and zypper</li>
+</ul>
+<p><strong>Installing via Commandline</strong></p>
+<pre><code class="language-bash"># update installed packages / online repositories
+sudp apt-get upgrade    # upgrade installed packages
+sudo apt-get update     # update online repositories
+
+# search new packages
+sudo apt-cache search &lt;keyword&gt;       # search keyword
+sudo apt-cache search &quot;web browser&quot;   # search &quot;web browser&quot;-packages
+sudo apt-cache show &lt;package name&gt;    # show info about a given package
+sudo apt-cache show pwgen             # show info about &quot;pwgen&quot;
+
+# install new packages
+sudo apt-get install pwgen   # installs &quot;pwgen&quot;-package
+which pwgen                  # display path to pwgen
+sudo apt-get install pw      # doubletab to see all packages starting with &quot;pw&quot;
+
+# removing packages
+sudo apt-get remove &lt;package name&gt;  # removes package
+sudo apt-get purge &lt;package name&gt;   # removes package and related files
+
+# reinstall a package (when its somehow broken)
+sudo apt-get install &lt;package name&gt; --reinstall
+
+# remove unneeded cache files stored at /var/cache/apt/packages
+sudo apt-get clean    
+
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="html_mainTags.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="bash_manipulating_files.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="js.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="bash_users_and_permissions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -161,13 +199,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="html_mainTags.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="bash_manipulating_files.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="js.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="bash_users_and_permissions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
