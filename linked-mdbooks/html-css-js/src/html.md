@@ -18,3 +18,4 @@
 - **CSS Libraries**
   * [Bootstrap](https://getbootstrap.com/) — widely used. By ex-twitter employees.
   * [Material Design](https://material.io/design/) — alternative (by Google)
+- **[Semantic UI](https://semantic-ui.com/)** — beautiful animations
