@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>git</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="git.html"><strong aria-hidden="true">1.</strong> Git and Github</a></li><li><ol class="section"><li><a href="git_basics.html"><strong aria-hidden="true">1.1.</strong> Basics</a></li><li><a href="git_config.html"><strong aria-hidden="true">1.2.</strong> Configuration</a></li><li><a href="git_init.html"><strong aria-hidden="true">1.3.</strong> Initialization</a></li><li><a href="git_commit.html"><strong aria-hidden="true">1.4.</strong> Commits</a></li><li><a href="git_branches.html"><strong aria-hidden="true">1.5.</strong> Branches and Merges</a></li><li><a href="git_remote.html"><strong aria-hidden="true">1.6.</strong> Remote (pull, fetch, rebase, push)</a></li><li><a href="git_usefull_from_github.html"><strong aria-hidden="true">1.7.</strong> Usefull Commands (by GitHub)</a></li><li><a href="git_questions.html"><strong aria-hidden="true">1.8.</strong> Open Questions)</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">git</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#git-and-github" id="git-and-github"><h1>Git and Github</h1></a>
+<p><strong>Git</strong></p>
+<ul>
+<li>distributed version-control system for tracking changes in source code during software development</li>
+<li>works for any text-based files</li>
+<li>can be accessed via commandline (git bash) or graphical interface (git GUI)</li>
+</ul>
+<p><strong>Github</strong></p>
+<ul>
+<li>a web-based service for version control with git</li>
+<li>has a GUI for ease of use</li>
+<li>including features like &quot;issues&quot;, that are independant of git</li>
+<li>alternative Plattforms:
+<ul>
+<li><a href="https://gitlab.com">GitLab</a>: allows also private repositories in free plan</li>
+<li><a href="https://bitbucket.org/">BitBucket</a>: another competitor</li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#basics" id="basics"><h1>Basics</h1></a>
+<ul>
+<li><strong>initialization</strong>: creates a .git folder and starts tracking the changes through version control software.</li>
+<li><strong>staging area</strong>: when changes are recognized and prepared to be committed, they first will be added to the staging area.</li>
+<li><strong>commit</strong>: update the current branch with the files that are in the staging area.</li>
+<li><strong>branches</strong>: one feature = one branch!</li>
+<li><strong>merge</strong>: merge one branch with another</li>
+<li><strong>pull</strong>: pulling data from a source</li>
+<li><strong>push</strong>: pushing data to a target</li>
+<li><strong>forking</strong>: copying a full repo</li>
+<li><strong>pull request</strong>: request that someone else pulls your code (= code review). Typically a feature of github, not of git itself (true?).</li>
+</ul>
+<a class="header" href="#configuration" id="configuration"><h1>Configuration</h1></a>
+<pre><code class="language-bash"># set username and email (GLOBAL)
+git config --global user.name 'thomas starzynski'
+git config --global user.email 'thomas.starzynski@unibas.ch'
+
+# check current username and email (GLOBAL)
+# will return nothing when not set
+git config --global user.name
+git config --global user.email
+</code></pre>
+<a class="header" href="#initialization" id="initialization"><h1>Initialization</h1></a>
+<pre><code class="language-bash">git init                # initializes new git repository in current directory!
+                        # a .git folder is created
+                        # by typing &quot;ll&quot; you can see the .git folder (it is hidden)
+git clone &lt;githublink&gt;	# clones github repo to local machine (in working directory)
+                        # remote connection established automatically
+</code></pre>
+<a class="header" href="#commits" id="commits"><h1>Commits</h1></a>
+<a class="header" href="#a2-step-process" id="a2-step-process"><h3>2-step process</h3></a>
+<ol>
+<li>adding changes to <strong>staging area</strong></li>
+</ol>
+<pre><code class="language-bash">git status            # shows changes made on local machine
+git diff &lt;filename&gt;   # displays all changes of a modified file
+
+# adding files or full directory to &quot;staging area&quot;
+git add &lt;file&gt;
+git add .
+
+# removing files from &quot;staging area&quot;
+git rm --cached &lt;file&gt;
+
+# commits changes (that were added staging area) to current branch
+git commit -m 'commit message'
+</code></pre>
+<ol start="2">
+<li><strong>commiting</strong> changes in staging area to current branch</li>
+</ol>
+<pre><code class="language-bash"># commits changes (that were added staging area) to current branch
+git commit -m 'commit message'
+</code></pre>
+<a class="header" href="#overview-log-of-all-commits-and-branches" id="overview-log-of-all-commits-and-branches"><h3>Overview: log of all Commits and Branches</h3></a>
+<pre><code class="language-bash"># complete (long) format
+git log
+</code></pre>
+<pre><code class="language-bash"># pretty format
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative
+</code></pre>
+<a class="header" href="#branches-and-merges" id="branches-and-merges"><h1>Branches and Merges</h1></a>
+<pre><code class="language-bash"># branches
+git branch                    # shows all branches
+git checkout -b &lt;newBranch&gt;   # creates new branch and moves into it
+git checkout &lt;existingBranch&gt; # switches to an existing branch
+
+# merge branch 
+??
+
+# discarding all changes that show up with &quot;git status&quot;
+git checkout .          # forgot -&gt; ??
+git checkout &lt;file&gt;     # forgot -&gt; ??
+</code></pre>
+<a class="header" href="#remote-pull-fetch-rebase-push" id="remote-pull-fetch-rebase-push"><h1>Remote (pull, fetch, rebase, push)</h1></a>
+<pre><code class="language-bash"># connect to remote
+git remote add origin &lt;githublink&gt;  # connects to remote (which we call &quot;origin&quot; here)
+git remote -v                       # check connection to remote
+
+# pull from remote before pushing
+# -&gt; in case someone commited changes to the remotes
+#    master while you were working on your local repo
+git remote -v  # check if connected right
+git pull       # pull lates without destroying local changes
+
+# push local changes to master
+git push origin master
+
+# PULL REQUEST = Code Review
+# -&gt; via GitHub?
+</code></pre>
+<a class="header" href="#usefull-commands-by-github" id="usefull-commands-by-github"><h1>Usefull Commands by (Github)</h1></a>
+<pre><code class="language-bash"># create a new repository on the command line
+cd target-folder
+echo &quot;# title-of-repo&quot; &gt;&gt; README.md
+git init
+git add README.md
+git commit -m &quot;first commit&quot;
+git remote add origin &lt;github-repo-link&gt;
+git push -u origin master
+</code></pre>
+<pre><code class="language-bash"># push an existing repository from the command line
+git remote add origin &lt;github-repo-link&gt;
+git push -u origin master
+</code></pre>
+<a class="header" href="#open-questions" id="open-questions"><h1>Open Questions</h1></a>
+<ul>
+<li>wie kompletten subfolder entfernen für <code>git remove</code></li>
+<li>wenn man &quot;git status&quot; eingibt -&gt; sieht man nur den gangen Folder, nicht die einzelnen files. Kann man mit git status auch alle files aufgelistet haben in den subfoldern?</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
