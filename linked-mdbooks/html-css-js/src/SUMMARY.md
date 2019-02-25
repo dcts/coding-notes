@@ -7,4 +7,9 @@ welcome blabla
 	- [Main Tags](./html_mainTags.md)
 
 - [CSS](./css.md)
+	- [Structure](./css_structure.md)
+	- [Basics](./css_basic.md)
+	- [Text Properties](./css_text.md)
+	- [Box Model](./css_boxflow.md)
+- [Bootstrap](./bootstrap.md)
 - [JavaScript](./js.md)

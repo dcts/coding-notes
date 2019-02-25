@@ -9,4 +9,6 @@ git config --global user.email 'thomas.starzynski@unibas.ch'
 # will return nothing when not set
 git config --global user.name
 git config --global user.email
+git config --list       # list all configurations
+git config -l           # --list = -l
 ```

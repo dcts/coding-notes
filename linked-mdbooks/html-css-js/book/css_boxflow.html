@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Configuration - git</title>
+        <title>Box Model - Html/CSS notes</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="git.html"><strong aria-hidden="true">1.</strong> Git and Github</a></li><li><ol class="section"><li><a href="git_basics.html"><strong aria-hidden="true">1.1.</strong> Basics</a></li><li><a href="git_config.html" class="active"><strong aria-hidden="true">1.2.</strong> Configuration</a></li><li><a href="git_init.html"><strong aria-hidden="true">1.3.</strong> Initialization</a></li><li><a href="git_commit.html"><strong aria-hidden="true">1.4.</strong> Commits</a></li><li><a href="git_branches.html"><strong aria-hidden="true">1.5.</strong> Branches and Merges</a></li><li><a href="git_remote.html"><strong aria-hidden="true">1.6.</strong> Remote (pull, fetch, rebase, push)</a></li><li><a href="git_usefull_from_github.html"><strong aria-hidden="true">1.7.</strong> Usefull Commands (by GitHub)</a></li><li><a href="git_questions.html"><strong aria-hidden="true">1.8.</strong> Open Questions)</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li><ol class="section"><li><a href="html_structure.html"><strong aria-hidden="true">1.1.</strong> Structure</a></li><li><a href="html_meta_tags.html"><strong aria-hidden="true">1.2.</strong> Meta Tags</a></li><li><a href="html_mainTags.html"><strong aria-hidden="true">1.3.</strong> Main Tags</a></li></ol></li><li><a href="css.html"><strong aria-hidden="true">2.</strong> CSS</a></li><li><ol class="section"><li><a href="css_structure.html"><strong aria-hidden="true">2.1.</strong> Structure</a></li><li><a href="css_basic.html"><strong aria-hidden="true">2.2.</strong> Basics</a></li><li><a href="css_text.html"><strong aria-hidden="true">2.3.</strong> Text Properties</a></li><li><a href="css_boxflow.html" class="active"><strong aria-hidden="true">2.4.</strong> Box Model</a></li></ol></li><li><a href="bootstrap.html"><strong aria-hidden="true">3.</strong> Bootstrap</a></li><li><a href="js.html"><strong aria-hidden="true">4.</strong> JavaScript</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -102,7 +102,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">git</h1> 
+                        <h1 class="menu-title">Html/CSS notes</h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -136,17 +136,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#configuration" id="configuration"><h1>Configuration</h1></a>
-<pre><code class="language-bash"># set username and email (GLOBAL)
-git config --global user.name 'thomas starzynski'
-git config --global user.email 'thomas.starzynski@unibas.ch'
-
-# check current username and email (GLOBAL)
-# will return nothing when not set
-git config --global user.name
-git config --global user.email
-git config --list       # list all configurations
-git config -l           # --list = -l
+                        <a class="header" href="#css-box-model" id="css-box-model"><h1>CSS Box Model</h1></a>
+<p><img src="pics/css-box-model.png"></p>
+<ul>
+<li>margin (Platz ausserhalb vom Rand)</li>
+<li>border (Rand)</li>
+<li>padding (Platz zwischen Rand und Inhalt)</li>
+<li>content (Inhalt)</li>
+</ul>
+<a class="header" href="#example" id="example"><h3>Example</h3></a>
+<pre><code class="language-css">div {
+    padding: 10px;
+    border: 2px;
+    margin: 10px;
+}
 </code></pre>
 
                     </main>
@@ -154,13 +157,13 @@ git config -l           # --list = -l
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="git_basics.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="css_text.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="git_init.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="bootstrap.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -172,13 +175,13 @@ git config -l           # --list = -l
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="git_basics.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="css_text.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="git_init.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="bootstrap.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

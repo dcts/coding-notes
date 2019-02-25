@@ -32,10 +32,7 @@
     </head>
     <body class="light">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = "light";
-        </script>
+        <script type="text/javascript">var path_to_root = "";</script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
@@ -57,7 +54,7 @@
         <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
-            if (theme === null || theme === undefined) { theme = default_theme; }
+            if (theme === null || theme === undefined) { theme = 'light'; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
         </script>
@@ -75,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li><ol class="section"><li><a href="html_structure.html" class="active"><strong aria-hidden="true">1.1.</strong> Structure</a></li><li><a href="html_meta_tags.html"><strong aria-hidden="true">1.2.</strong> Meta Tags</a></li><li><a href="html_mainTags.html"><strong aria-hidden="true">1.3.</strong> Main Tags</a></li></ol></li><li><a href="css.html"><strong aria-hidden="true">2.</strong> CSS</a></li><li><a href="js.html"><strong aria-hidden="true">3.</strong> JavaScript</a></li></ol>
+            <ol class="chapter"><li><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li><ol class="section"><li><a href="html_structure.html" class="active"><strong aria-hidden="true">1.1.</strong> Structure</a></li><li><a href="html_meta_tags.html"><strong aria-hidden="true">1.2.</strong> Meta Tags</a></li><li><a href="html_mainTags.html"><strong aria-hidden="true">1.3.</strong> Main Tags</a></li></ol></li><li><a href="css.html"><strong aria-hidden="true">2.</strong> CSS</a></li><li><ol class="section"><li><a href="css_structure.html"><strong aria-hidden="true">2.1.</strong> Structure</a></li><li><a href="css_basic.html"><strong aria-hidden="true">2.2.</strong> Basics</a></li><li><a href="css_text.html"><strong aria-hidden="true">2.3.</strong> Text Properties</a></li><li><a href="css_boxflow.html"><strong aria-hidden="true">2.4.</strong> Box Model</a></li></ol></li><li><a href="bootstrap.html"><strong aria-hidden="true">3.</strong> Bootstrap</a></li><li><a href="js.html"><strong aria-hidden="true">4.</strong> JavaScript</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -92,7 +89,7 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -111,7 +108,6 @@
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
-                            
                         </div>
                     </div>
                 </div>
@@ -153,6 +149,15 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+<ul>
+<li><strong>Head</strong>: all &quot;intelligence&quot; goes here. Links to stylesheets, fonts, meta-tags for SEO etc.</li>
+<li><strong>Body</strong>: all content goes here!</li>
+<li><strong>tag</strong>: always starttag and endtag.</li>
+<li><strong>self-closing tag</strong>: no end-tag needed. e.g.: <code>img</code> or <code>meta</code> or <code>br</code></li>
+<li><strong>attribute</strong>: attribute.name <code>width</code> and attribute.value <code>10px</code></li>
+</ul>
+<a class="header" href="#core-syntax" id="core-syntax"><h2>core syntax</h2></a>
+<p><img src="/pics/html-syntax.png" width="350"/></p>
 
                     </main>
 
