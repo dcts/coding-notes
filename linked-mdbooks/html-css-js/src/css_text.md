@@ -11,9 +11,12 @@ font-size: 100%;
 font-size: 0.8em;
 font-size: 1em;
 
-/* Font-Weight */
-font-weight: normal;
-font-weight: bold;
+/* Font-Style */
+font-style italic;
+font-weight: normal; /* = 400 */
+font-weight: bold;   /* = 700 */
+font-weight: 900; 	 /* valid values: 100,200,300,..,900 */
+
 
 /* Text Decoration */ 
 text-decoration: none;

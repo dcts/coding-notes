@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li><ol class="section"><li><a href="html_structure.html"><strong aria-hidden="true">1.1.</strong> Structure</a></li><li><a href="html_meta_tags.html"><strong aria-hidden="true">1.2.</strong> Meta Tags</a></li><li><a href="html_mainTags.html"><strong aria-hidden="true">1.3.</strong> Main Tags</a></li></ol></li><li><a href="css.html"><strong aria-hidden="true">2.</strong> CSS</a></li><li><ol class="section"><li><a href="css_structure.html"><strong aria-hidden="true">2.1.</strong> Structure</a></li><li><a href="css_basic.html"><strong aria-hidden="true">2.2.</strong> Basics</a></li><li><a href="css_text.html"><strong aria-hidden="true">2.3.</strong> Text Properties</a></li><li><a href="css_boxflow.html"><strong aria-hidden="true">2.4.</strong> Box Model</a></li></ol></li><li><a href="bootstrap.html"><strong aria-hidden="true">3.</strong> Bootstrap</a></li><li><a href="js.html"><strong aria-hidden="true">4.</strong> JavaScript</a></li></ol>
+            <ol class="chapter"><li><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li><ol class="section"><li><a href="html_structure.html"><strong aria-hidden="true">1.1.</strong> Structure</a></li><li><a href="html_meta_tags.html"><strong aria-hidden="true">1.2.</strong> Meta Tags</a></li><li><a href="html_mainTags.html"><strong aria-hidden="true">1.3.</strong> Main Tags</a></li></ol></li><li><a href="css.html"><strong aria-hidden="true">2.</strong> CSS</a></li><li><ol class="section"><li><a href="css_linking.html"><strong aria-hidden="true">2.1.</strong> Linking CSS and HTML</a></li><li><a href="css_structure.html"><strong aria-hidden="true">2.2.</strong> Strcuture / Specificity</a></li><li><ol class="section"><li><a href="css_structure_multiclass.html"><strong aria-hidden="true">2.2.1.</strong> Multiple Classes</a></li><li><a href="css_structure_multiclass_conf.html"><strong aria-hidden="true">2.2.2.</strong> Multiple Classes (Conflicts)</a></li><li><a href="css_structure_chaining.html"><strong aria-hidden="true">2.2.3.</strong> Chaining Selectors</a></li><li><a href="css_structure_nesting.html"><strong aria-hidden="true">2.2.4.</strong> Nesting</a></li><li><a href="css_structure_important.html"><strong aria-hidden="true">2.2.5.</strong> !Important</a></li></ol></li><li><a href="css_bg-images.html"><strong aria-hidden="true">2.3.</strong> Backgrounds / Images</a></li><li><a href="css_colors.html"><strong aria-hidden="true">2.4.</strong> Colors</a></li><li><ol class="section"><li><a href="css_colornames.html"><strong aria-hidden="true">2.4.1.</strong> Color Names</a></li><li><a href="css_colors-rgb.html"><strong aria-hidden="true">2.4.2.</strong> RGB(a)</a></li><li><a href="css_colors-hex.html"><strong aria-hidden="true">2.4.3.</strong> HEX</a></li><li><a href="css_colors-hsl.html"><strong aria-hidden="true">2.4.4.</strong> HLS(a)</a></li></ol></li><li><a href="css_text.html"><strong aria-hidden="true">2.5.</strong> Typography (Text)</a></li><li><a href="css_boxflow.html"><strong aria-hidden="true">2.6.</strong> Box Model</a></li><li><a href="css_questions.html"><strong aria-hidden="true">2.7.</strong> OPEN QUESTIONS</a></li></ol></li><li><a href="bootstrap.html"><strong aria-hidden="true">3.</strong> Bootstrap</a></li><li><a href="js.html"><strong aria-hidden="true">4.</strong> JavaScript</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -152,6 +152,7 @@
 <ul>
 <li><a href="https://fonts.google.com/">Google Fonts</a> — choose fonts and load via <code>link</code> tag</li>
 <li><a href="https://fontawesome.com/">FontsAwesome</a> — common social media plattforms as font (svg)</li>
+<li><a href="https://www.fontsquirrel.com/">FontsSquirrel</a> — fonts to use locally</li>
 </ul>
 </li>
 <li><strong>colors</strong>
@@ -173,6 +174,8 @@
 </ul>
 </li>
 <li><strong><a href="https://semantic-ui.com/">Semantic UI</a></strong> — beautiful animations</li>
+<li><strong><a href="https://dribbble.com/">Dribble</a></strong> — GitHub for designers, perfect for inspiration</li>
+<li><strong><a href="">Product Hunt</a></strong> — startups posting their products. You can get inspiration of the design of other startups.</li>
 </ul>
 <a class="header" href="#landing-page" id="landing-page"><h3>Landing Page</h3></a>
 <ul>
@@ -213,8 +216,8 @@
 &lt;!-- meta charset --&gt;
 &lt;meta charset=&quot;utf-8&quot; /&gt;
 
-&lt;!-- LINK stylesheet--&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+&lt;!-- LINK css-style (type attribute is neede in html 4 and lower) --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;URL&quot; /&gt;
 
 &lt;!-- LINK JS files --&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;jquery-3.3.1.js&quot;&gt;&lt;/script&gt;
@@ -280,7 +283,7 @@
 </code></pre>
 <a class="header" href="#css" id="css"><h1>CSS</h1></a>
 <p><strong>CSS</strong> = <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heet</p>
-<a class="header" href="#vocabulary" id="vocabulary"><h2>Vocabulary</h2></a>
+<a class="header" href="#vocabulary--syntax" id="vocabulary--syntax"><h2>Vocabulary &amp; Syntax</h2></a>
 <p><img src="pics/css-syntax.png" width="450px" /></p>
 <ul>
 <li><strong>CSS-Selector</strong> — are used to &quot;find&quot; (or select) HTML elements based on their element name <code>tag</code>, id <code>#</code>, class <code>.</code>, attribute, and more.</li>
@@ -288,30 +291,163 @@
 <li><strong>style property</strong> — for example <code>width</code>, <code>color</code> or <code>font-size</code></li>
 <li><strong>property-value</strong> — for example <code>100px</code>, <code>red</code> or <code>14px</code>. Value is surrounded by quotations marks <code>&quot;&quot;</code>.</li>
 </ul>
-<a class="header" href="#linking" id="linking"><h2>Linking</h2></a>
-<pre><code class="language-html">&lt;head&gt;
+<a class="header" href="#multiple-css-selectors" id="multiple-css-selectors"><h2>Multiple CSS-Selectors</h2></a>
+<pre><code class="language-css">/* seperated by comma 
+ * can be classes, id's or tags, doesnt really matter */ 
+h1, h2, p, 
+.banners, .container,
+#top-logo, #footer-logo {
+  property: value;
+  property: value;
+  property: value;
+}
+</code></pre>
+<a class="header" href="#linking-css-and-html" id="linking-css-and-html"><h1>Linking CSS and HTML</h1></a>
+<a class="header" href="#linking-via-css-file" id="linking-via-css-file"><h3>Linking via CSS-File</h3></a>
+<pre><code class="language-html">&lt;!-- add link in HEAD --&gt;
+&lt;head&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; src=&quot;css/style.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<a class="header" href="#linking-with-style-tag" id="linking-with-style-tag"><h3>Linking with <code>style</code> tag</h3></a>
+<pre><code class="language-html">&lt;!-- add style in HEAD --&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    body {
+      /* CSS styling for body here */ 
+    }
+    p {
+      /* CSS styling for paragraph */
+    }
+  &lt;/style&gt;
   &lt;link rel=&quot;stylesheet&quot; src=&quot;css/style.css&quot;&gt;
 &lt;/head&gt;
 </code></pre>
-<a class="header" href="#structure-1" id="structure-1"><h1>Structure</h1></a>
-<p><strong>cascading</strong> order = the most specific (lowest level) is applied! Top level styles will be overriden!</p>
+<a class="header" href="#inline-linking" id="inline-linking"><h3>Inline-Linking</h3></a>
+<pre><code class="language-html">&lt;!--  --&gt;
+&lt;p style=&quot;color: white; background-color: black;&quot;&gt;
+  white text on black background
+&lt;/p&gt;
+</code></pre>
+<a class="header" href="#structure-and-specificity" id="structure-and-specificity"><h1>Structure and Specificity</h1></a>
+<p><strong>cascading</strong> order = the most specific css-selector is applied! Less specific selectors will be overriden.</p>
+<ol>
+<li><strong>tagname</strong>: least specific</li>
+<li><strong>class</strong>: more specific, recurrent styling</li>
+<li><strong>id</strong>: most specific. One element per id only, applying the same id to multiple elements is invalid HTML and should be avoided</li>
+</ol>
 <pre><code class="language-css">/* tag-level */
-body {
-
-}
+body { }
 
 /* class-level */
-#myClass {
-
-}
+#myClass { }
 
 /* id-level */
-.myId {
-
-}
-
+.myId { }
 </code></pre>
-<a class="header" href="#basics" id="basics"><h1>Basics</h1></a>
+<a class="header" href="#multiple-classes" id="multiple-classes"><h1>Multiple Classes</h1></a>
+<pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;p class=&quot;bold italic&quot;&gt;this will be bold and italic&lt;/p
+</code></pre>
+<pre><code class="language-css">/* CSS */ 
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+</code></pre>
+<a class="header" href="#conflicts-multiple-class" id="conflicts-multiple-class"><h1>Conflicts (multiple class)</h1></a>
+<ul>
+<li>Ordering of class-selectors does matter inside the CSS-file</li>
+<li>CSS-file: when two css-selectors have the same specificity (e.g. they are both classes) and conflicting styles, then the style of the selector is applied that is written at the end of the file (the latest instruction is applied)</li>
+<li>Ordering of the class-attribute-values (inside the HTML-file) does <strong>not</strong> matter</li>
+<li>if the ordering switches inside the CSS-file</li>
+</ul>
+<pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;p class=&quot;red green&quot;&gt;
+  wil be displayed red, not green! (.red is later defined than .green)
+&lt;/p&gt;
+</code></pre>
+<pre><code class="language-css">/* CSS */ 
+.green {
+  text-transform: uppercase;
+}
+.red {
+  text-transform: capitalize;
+}
+</code></pre>
+<ul>
+<li>a chained class-selector is more specific than an pure class selector, but less specific than a id-selector!</li>
+</ul>
+<pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;p id=&quot;my-name&quot; class=&quot;red&quot;&gt;Hans Müller&lt;/p&gt;
+</code></pre>
+<pre><code class="language-css">/* CSS */
+.red {color: red;}
+p.red {color: darkred;}
+#my-name {color: hotpink;}
+
+/* text will be displayed hotpink
+ * ordering in the css file does not impact the outcome,
+ * since none of the css-selectors has the same specificty! 
+ * -&gt; id &gt; chained class &gt; class */ 
+</code></pre>
+<a class="header" href="#chaining-selectors" id="chaining-selectors"><h1>Chaining Selectors</h1></a>
+<pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;h1 class=&quot;red&quot;&gt;will be red and bold&lt;/h1&gt;
+&lt;p class=&quot;red&quot;&gt;will be red only&lt;/p&gt;
+</code></pre>
+<pre><code class="language-css">/* CSS */ 
+.red {
+  color: red;
+}
+h1.red {
+  font-style: bold;
+}
+</code></pre>
+<ul>
+<li>applies <code>color:red;</code> to all classes (for both <code>h1</code> and <code>p</code>)</li>
+<li>for <code>h1</code> there is additional a font-style defined (bold)</li>
+<li>this example is only demonstration, not best practice!</li>
+</ul>
+<a class="header" href="#accsessing-nested-elements" id="accsessing-nested-elements"><h1>Accsessing Nested Elements</h1></a>
+<pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;ul class=&quot;main-list&quot;&gt;
+  &lt;li&gt;orange&lt;/li&gt;
+  &lt;li&gt;apple&lt;/li&gt;
+  &lt;li&gt;lemon&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-css">/* CSS */ 
+.main-list li {
+  color: red;
+}
+</code></pre>
+<a class="header" href="#important" id="important"><h1>!important</h1></a>
+<ul>
+<li>There is one thing that is even more specific than IDs: <code>!important</code>. It can be applied to specific attributes instead of full rules. It will override any style no matter how specific it is. As a result, it should almost never be used. Once <code>!important</code> is used, it is very hard to override.</li>
+<li>If you ever see <code>!important</code> used (or are ever tempted to use it yourself) we strongly recommend reorganizing your CSS.</li>
+</ul>
+<pre><code class="language-html">&lt;!-- HTML --&gt;
+&lt;p id=&quot;green&quot;&gt;not green!&lt;/p&gt;
+</code></pre>
+<pre><code class="language-css">/* CSS */ 
+#green {color: green;}
+p {color: blue !important}
+
+/* !important overrides even the id-selector!*/
+</code></pre>
+<a class="header" href="#backgrounds--images" id="backgrounds--images"><h1>Backgrounds / Images</h1></a>
+<a class="header" href="#colors" id="colors"><h1>Colors</h1></a>
+<p>There are 3 types how color can be displayed:</p>
+<ul>
+<li><strong><a href="./css_colornames.html">Color Names</a></strong> — around 140 predefined names. Some names are assigned the same color, for example <code>grey</code> and <code>gray</code> represent the same color.</li>
+<li><strong><a href="./css_colors-rgb.html">RGB(a)</a></strong> — red, green, blue encoding (0-255). Total of 16.5 MIO colors acn be represented in this spectrum.</li>
+<li><strong><a href="./css_colors-hex.html">HEX</a></strong> — same logic as RGB, but different encoding.</li>
+<li><strong><a href="./css_colors-hsl.html">HSL(a)</a></strong> —</li>
+</ul>
+<a class="header" href="#some-examples" id="some-examples"><h3>Some Examples</h3></a>
 <pre><code class="language-css">/* Text Color */
 color: white;
 
@@ -326,6 +462,60 @@ color: rgb(0,0,0);
 color: rgba(0,0,0, 1.0);
 
 </code></pre>
+<a class="header" href="#color-names" id="color-names"><h1>Color Names</h1></a>
+<a class="header" href="#some-colornames" id="some-colornames"><h3>Some Colornames</h3></a>
+<div style="background-color:maroon; font-weight:bold; color:black;">maroon</div>
+<div style="background-color:hsl(0,100%,50%, 1); font-weight:bold; color:black;">red</div>
+<div style="background-color:orange; font-weight:bold; color:black;">orange</div>
+<div style="background-color:yellow; font-weight:bold; color:black;">yellow</div>
+<div style="background-color:lime; font-weight:bold; color:black;">lime</div>
+<div style="background-color:green; font-weight:bold; color:black;">green</div>
+<div style="background-color:olive; font-weight:bold; color:black;">olive</div>
+<div style="background-color:purple; font-weight:bold; color:black;">purple</div>
+<div style="background-color:fuchsia; font-weight:bold; color:black;">fuchsia</div>
+<div style="background-color:teal; font-weight:bold; color:black;">teal</div>
+<div style="background-color:aqua; font-weight:bold; color:black;">aqua</div>
+<div style="background-color:blue; font-weight:bold; color:white;">blue</div>
+<div style="background-color:navy; font-weight:bold; color:white;">navy</div>
+<div style="background-color:black; font-weight:bold; color:white;">black</div>
+<div style="background-color:gray; font-weight:bold; color:black;">gray</div>
+<div style="background-color:silver; font-weight:bold; color:black;">silver</div>
+<div style="background-color:white; font-weight:bold; color:black;">white</div>
+<a class="header" href="#all-colornames-alphabetically" id="all-colornames-alphabetically"><h3>All Colornames (alphabetically)</h3></a>
+<p style="text-align: justify;">AliceBlue, AntiqueWhite, Aqua, Aquamarine, Azure, Beige, Bisque, Black, BlanchedAlmond, Blue, BlueViolet, Brown, BurlyWood, CadetBlue, Chartreuse, Chocolate, Coral, CornflowerBlue, Cornsilk, Crimson, Cyan, DarkBlue, DarkCyan, DarkGoldenRod, DarkGray, DarkGrey, DarkGreen, DarkKhaki, DarkMagenta, DarkOliveGreen, DarkOrange, DarkOrchid, DarkRed, DarkSalmon, DarkSeaGreen, DarkSlateBlue, DarkSlateGray, DarkSlateGrey, DarkTurquoise, DarkViolet, DeepPink, DeepSkyBlue, DimGray, DimGrey, DodgerBlue, FireBrick, FloralWhite, ForestGreen, Fuchsia, Gainsboro, GhostWhite, Gold, GoldenRod, Gray, Grey, Green, GreenYellow, HoneyDew, HotPink, IndianRed , Indigo , Ivory, Khaki, Lavender, LavenderBlush, LawnGreen, LemonChiffon, LightBlue, LightCoral, LightCyan, LightGoldenRodYellow, LightGray, LightGrey, LightGreen, LightPink, LightSalmon, LightSeaGreen, LightSkyBlue, LightSlateGray, LightSlateGrey, LightSteelBlue, LightYellow, Lime, LimeGreen, Linen, Magenta, Maroon, MediumAquaMarine, MediumBlue, MediumOrchid, MediumPurple, MediumSeaGreen, MediumSlateBlue, MediumSpringGreen, MediumTurquoise, MediumVioletRed, MidnightBlue, MintCream, MistyRose, Moccasin, NavajoWhite, Navy, OldLace, Olive, OliveDrab, Orange, OrangeRed, Orchid, PaleGoldenRod, PaleGreen, PaleTurquoise, PaleVioletRed, PapayaWhip, PeachPuff, Peru, Pink, Plum, PowderBlue, Purple, RebeccaPurple, Red, RosyBrown, RoyalBlue, SaddleBrown, Salmon, SandyBrown, SeaGreen, SeaShell, Sienna, Silver, SkyBlue, SlateBlue, SlateGray, SlateGrey, Snow, SpringGreen, SteelBlue, Tan, Teal, Thistle, Tomato, Turquoise, Violet, Wheat, White, WhiteSmoke, Yellow, YellowGreen</p>
+<a class="header" href="#rgba" id="rgba"><h1>RGB(a)</h1></a>
+<a class="header" href="#hex" id="hex"><h1>HEX</h1></a>
+<p>Each of the 6 HEX-values can be [0-9][A-F], which make up to 16 possibilities: <code>(16x16, 16x16, 16x16) = (255, 255, 255)</code>. </p>
+<a class="header" href="#hsla" id="hsla"><h1>HSL(a)</h1></a>
+<ul>
+<li><strong>Hue</strong>: Value between 0-360. Degree on the color-circle:<br><code>0:red, 120:green, 240:blue</code>.</li>
+<li><strong>Saturation</strong>: Percentage 0-100% (or 0-1). Mixes the color with grey:<br><code>100%:pure, 0%:grey</code></li>
+<li><strong>Lightness</strong>: Percentage 0-100% (or 0-1). Normal value is 50%:<br><code>0%:black, 50%:normal, 100%: white</code></li>
+<li><strong>a</strong>: Percentage 0-100% (or 0-1). alpha-channel = opacity. Optional parameter. <code>0:transparent, 1:no-opacity</code></li>
+</ul>
+<pre><code class="language-css">hsl(0,   1, 0.5)   /* =red   =rgb(255,0,0) */
+hsl(120, 1, 0.5)   /* =green =rgb(0,255,0) */
+hsl(240, 1, 0.5)   /* =blue  =rgb(0,0,255) */
+
+/* percentage format*/ 
+hsl(0,   100%, 50%)
+hsl(120, 100%, 50%)
+hsl(240, 100%, 50%)
+
+/* with alpha channel (different levels) */
+hsl(0, 100%, 50%, 0)
+hsl(0, 100%, 50%, 0.1)
+hsl(0, 100%, 50%, 1)    /* standard setting */
+</code></pre>
+<a class="header" href="#hue-saturation-lightness-overview" id="hue-saturation-lightness-overview"><h3>Hue Saturation Lightness Overview</h3></a>
+<p><img src="pics/css-hsl2.png" alt="hsl" /></p>
+<a class="header" href="#color-circle-hue" id="color-circle-hue"><h3>Color Circle (Hue)</h3></a>
+<ul>
+<li><code>Red (0)</code></li>
+<li><code>Green (120)</code></li>
+<li><code>Blue (240)</code></li>
+</ul>
+<p><img src="pics/css-hsl1.png" alt="hsl" /></p>
 <a class="header" href="#text-properties" id="text-properties"><h1>Text Properties</h1></a>
 <pre><code class="language-css">/* Basic Fontstyle */
 font-family: Arial;
@@ -337,9 +527,12 @@ font-size: 100%;
 font-size: 0.8em;
 font-size: 1em;
 
-/* Font-Weight */
-font-weight: normal;
-font-weight: bold;
+/* Font-Style */
+font-style italic;
+font-weight: normal; /* = 400 */
+font-weight: bold;   /* = 700 */
+font-weight: 900; 	 /* valid values: 100,200,300,..,900 */
+
 
 /* Text Decoration */ 
 text-decoration: none;
@@ -378,6 +571,36 @@ letter-spacing: 3px;
     border: 2px;
     margin: 10px;
 }
+</code></pre>
+<a class="header" href="#open-questions" id="open-questions"><h1>OPEN QUESTIONS</h1></a>
+<ul>
+<li>best practice in CSS? Is it right that styles like &quot;red&quot; and &quot;bold&quot; should <strong>NOT</strong> be defined as classes, since then we &quot;style&quot; the content already inside the html code. If we want to redesign (choose other colors) then we have to rename our classnames in the HTML (thus chaning the HTML code), since we dont want a classname &quot;green&quot; having another color. Thats is painfull, am I right? Any pro tips / experiences with this?</li>
+</ul>
+<pre><code class="language-html">&lt;!-- VERSION 1 --&gt;
+&lt;h1 class=&quot;red bold&quot;&gt;my heading&lt;/h1&gt;
+.red {color: red;}
+.bold {font-weight: bold;}
+
+&lt;!-- VERSION 2 --&gt;
+&lt;h1 class=&quot;style1&quot;&gt;my heading&lt;/h1&gt;
+.style1 {color:red; font-weight:bold;}
+
+&lt;!-- VERSION 3 --&gt;
+&lt;h1 class=&quot;style1&quot;&gt;my heading&lt;/h1&gt;
+h1.style1 {color:red; font-weight:bold;}
+
+</code></pre>
+<ul>
+<li>Nested Elements: whats the use-case for this? I cant imagine any scenario where this is needed or cannot be acomplished with better classnames? I think its more clear to write more specific classnames than using this solution:</li>
+</ul>
+<pre><code class="language-css">/* why doing this? */
+.main-container h1 { property-value }
+
+/* instead of this */
+.main-container-h1 {property-value }
+
+/* obviously you have to write it down all the time, that sucks
+ * but for styling its much clearer? Aaah or maybe not, idk lol!
 </code></pre>
 <a class="header" href="#bootstrap" id="bootstrap"><h1>Bootstrap</h1></a>
 <a class="header" href="#javascript" id="javascript"><h1>JavaScript</h1></a>

@@ -11,6 +11,7 @@
 - **fonts**
   * [Google Fonts](https://fonts.google.com/) — choose fonts and load via `link` tag
   * [FontsAwesome](https://fontawesome.com/) — common social media plattforms as font (svg)
+  * [FontsSquirrel](https://www.fontsquirrel.com/) — fonts to use locally
 - **colors**
   * [ColorZilla](http://www.colorzilla.com/chrome/) — ColorPicker for chrome!
   * [Coolors](https://coolors.co/) — color scheme generator
@@ -21,6 +22,9 @@
   * [Bootstrap](https://getbootstrap.com/) — widely used. By ex-twitter employees.
   * [Material Design](https://material.io/design/) — alternative (by Google)
 - **[Semantic UI](https://semantic-ui.com/)** — beautiful animations
+- **[Dribble](https://dribbble.com/)** — GitHub for designers, perfect for inspiration
+- **[Product Hunt]()** — startups posting their products. You can get inspiration of the design of other startups.
+
 
 ### Landing Page
 - clear value proposition

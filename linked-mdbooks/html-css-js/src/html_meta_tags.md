@@ -10,8 +10,8 @@
 <!-- meta charset -->
 <meta charset="utf-8" />
 
-<!-- LINK stylesheet-->
-<link rel="stylesheet" href="style.css" />
+<!-- LINK css-style (type attribute is neede in html 4 and lower) -->
+<link rel="stylesheet" type="text/css" href="URL" />
 
 <!-- LINK JS files -->
 <script type="text/javascript" src="jquery-3.3.1.js"></script>
