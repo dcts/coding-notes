@@ -137,23 +137,37 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#chaining-selectors" id="chaining-selectors"><h1>Chaining Selectors</h1></a>
-<pre><code class="language-html">&lt;!-- HTML --&gt;
-&lt;h1 class=&quot;red&quot;&gt;will be red and bold&lt;/h1&gt;
-&lt;p class=&quot;red&quot;&gt;will be red only&lt;/p&gt;
-</code></pre>
-<pre><code class="language-css">/* CSS */ 
-.red {
-  color: red;
-}
-h1.red {
-  font-style: bold;
-}
-</code></pre>
+<p>We have 3 types of selectors <code>name</code>, <code>class</code> and <code>id</code>. We can combine these 3 different types by chaining them. We have to respect some rules:</p>
 <ul>
-<li>applies <code>color:red;</code> to all classes (for both <code>h1</code> and <code>p</code>)</li>
-<li>for <code>h1</code> there is additional a font-style defined (bold)</li>
-<li>this example is only demonstration, not best practice!</li>
+<li>if you include a nameselector, start with the name-selector</li>
+<li>you can't chain multiple name-selectors</li>
+<li>chain as much class-selectors as you want by adding <code>.classname</code></li>
+<li>you can chain also <strong>one</strong> id-selector by adding <code>#idname</code></li>
+<li>no spaces</li>
 </ul>
+<a class="header" href="#combinations-of-names-classes-ids" id="combinations-of-names-classes-ids"><h2>Combinations of Names, Classes, IDs</h2></a>
+<a class="header" href="#a1-multiple-classes" id="a1-multiple-classes"><h3>1. multiple classes</h3></a>
+<p>selects all html elements with class <code>red</code></p>
+<pre><code class="language-css">/* multiple classes (no id, no name) */
+.red.bold { ... }
+
+/* multiple classes and id (no name) */
+.red.bold#id1 { ... }
+
+/* name (h1) and id */
+h1#id1 { ... }
+
+/* name (h1) and class */
+h1.class1 { ... }
+
+/* name (h1) and multiple classes*/
+h1.class1.class2.class3 { ... }
+
+/* name (h1) with multiple classes and id */
+/* ordering doesnt matter */
+h1.red.bold#id1 { ... }
+h1.bold#id1.red { ... }   
+</code></pre>
 
                     </main>
 
