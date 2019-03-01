@@ -359,10 +359,8 @@ body { }
 </code></pre>
 <a class="header" href="#conflicts-multiple-class" id="conflicts-multiple-class"><h1>Conflicts (multiple class)</h1></a>
 <ul>
-<li>Ordering of class-selectors does matter inside the CSS-file</li>
+<li>Ordering of selectors with same specificity does matter inside the CSS-file</li>
 <li>CSS-file: when two css-selectors have the same specificity (e.g. they are both classes) and conflicting styles, then the style of the selector is applied that is written at the end of the file (the latest instruction is applied)</li>
-<li>Ordering of the class-attribute-values (inside the HTML-file) does <strong>not</strong> matter</li>
-<li>if the ordering switches inside the CSS-file</li>
 </ul>
 <pre><code class="language-html">&lt;!-- HTML --&gt;
 &lt;p class=&quot;red green&quot;&gt;
@@ -371,13 +369,14 @@ body { }
 </code></pre>
 <pre><code class="language-css">/* CSS */ 
 .green {
-  text-transform: uppercase;
+  color: green;
 }
 .red {
-  text-transform: capitalize;
+  color: red;
 }
 </code></pre>
 <ul>
+<li>Notice that the ordering of the class-attribute-values inside the HTML-tag does <strong>not</strong> matter, e.g. <code>&lt;p class=&quot;red green&quot;&gt;</code> will render the same as <code>&lt;p class=&quot;green red&quot;&gt;</code>.</li>
 <li>a chained class-selector is more specific than an pure class selector, but less specific than a id-selector!</li>
 </ul>
 <pre><code class="language-html">&lt;!-- HTML --&gt;
@@ -396,31 +395,34 @@ p.red {color: darkred;}
 <a class="header" href="#chaining-selectors" id="chaining-selectors"><h1>Chaining Selectors</h1></a>
 <p>We have 3 types of selectors <code>name</code>, <code>class</code> and <code>id</code>. We can combine these 3 different types by chaining them. We have to respect some rules:</p>
 <ul>
-<li>if you include a nameselector, start with the name-selector</li>
-<li>you can't chain multiple name-selectors</li>
+<li>chaining always works with the <code>.</code> or <code>#</code> operator.</li>
+<li>no spaces! Spaces are used for <a href="css_structure_nesting.html">nesting</a>, which is a different concept!</li>
+<li>if you include a name-selector, start with the name-selector</li>
+<li>you can't chain multiple name-selectors (one element cant be part of two tags)</li>
+<li>if you want to use two tagnames, you probably want to use <a href="css_structure_nesting.html">nesting</a></li>
 <li>chain as much class-selectors as you want by adding <code>.classname</code></li>
 <li>you can chain also <strong>one</strong> id-selector by adding <code>#idname</code></li>
-<li>no spaces</li>
 </ul>
 <a class="header" href="#combinations-of-names-classes-ids" id="combinations-of-names-classes-ids"><h2>Combinations of Names, Classes, IDs</h2></a>
-<a class="header" href="#a1-multiple-classes" id="a1-multiple-classes"><h3>1. multiple classes</h3></a>
-<p>selects all html elements with class <code>red</code></p>
-<pre><code class="language-css">/* multiple classes (no id, no name) */
-.red.bold { ... }
+<pre><code class="language-css">/* name */
+h1 { ... }
 
-/* multiple classes and id (no name) */
-.red.bold#id1 { ... }
-
-/* name (h1) and id */
-h1#id1 { ... }
-
-/* name (h1) and class */
+/* name &amp; class */
 h1.class1 { ... }
 
-/* name (h1) and multiple classes*/
+/* classes */
+.red.bold { ... }
+
+/* classes &amp; id */
+.red.bold#id1 { ... }
+
+/* name &amp; classes */
 h1.class1.class2.class3 { ... }
 
-/* name (h1) with multiple classes and id */
+/* name &amp; id */
+h1#id1 { ... }
+
+/* name &amp; classes &amp; id */
 /* ordering doesnt matter */
 h1.red.bold#id1 { ... }
 h1.bold#id1.red { ... }   
@@ -498,14 +500,74 @@ color: rgba(0,0,0, 1.0);
 <a class="header" href="#all-colornames-alphabetically" id="all-colornames-alphabetically"><h3>All Colornames (alphabetically)</h3></a>
 <p style="text-align: justify;">AliceBlue, AntiqueWhite, Aqua, Aquamarine, Azure, Beige, Bisque, Black, BlanchedAlmond, Blue, BlueViolet, Brown, BurlyWood, CadetBlue, Chartreuse, Chocolate, Coral, CornflowerBlue, Cornsilk, Crimson, Cyan, DarkBlue, DarkCyan, DarkGoldenRod, DarkGray, DarkGrey, DarkGreen, DarkKhaki, DarkMagenta, DarkOliveGreen, DarkOrange, DarkOrchid, DarkRed, DarkSalmon, DarkSeaGreen, DarkSlateBlue, DarkSlateGray, DarkSlateGrey, DarkTurquoise, DarkViolet, DeepPink, DeepSkyBlue, DimGray, DimGrey, DodgerBlue, FireBrick, FloralWhite, ForestGreen, Fuchsia, Gainsboro, GhostWhite, Gold, GoldenRod, Gray, Grey, Green, GreenYellow, HoneyDew, HotPink, IndianRed , Indigo , Ivory, Khaki, Lavender, LavenderBlush, LawnGreen, LemonChiffon, LightBlue, LightCoral, LightCyan, LightGoldenRodYellow, LightGray, LightGrey, LightGreen, LightPink, LightSalmon, LightSeaGreen, LightSkyBlue, LightSlateGray, LightSlateGrey, LightSteelBlue, LightYellow, Lime, LimeGreen, Linen, Magenta, Maroon, MediumAquaMarine, MediumBlue, MediumOrchid, MediumPurple, MediumSeaGreen, MediumSlateBlue, MediumSpringGreen, MediumTurquoise, MediumVioletRed, MidnightBlue, MintCream, MistyRose, Moccasin, NavajoWhite, Navy, OldLace, Olive, OliveDrab, Orange, OrangeRed, Orchid, PaleGoldenRod, PaleGreen, PaleTurquoise, PaleVioletRed, PapayaWhip, PeachPuff, Peru, Pink, Plum, PowderBlue, Purple, RebeccaPurple, Red, RosyBrown, RoyalBlue, SaddleBrown, Salmon, SandyBrown, SeaGreen, SeaShell, Sienna, Silver, SkyBlue, SlateBlue, SlateGray, SlateGrey, Snow, SpringGreen, SteelBlue, Tan, Teal, Thistle, Tomato, Turquoise, Violet, Wheat, White, WhiteSmoke, Yellow, YellowGreen</p>
 <a class="header" href="#rgba" id="rgba"><h1>RGB(a)</h1></a>
+<ul>
+<li><strong>R</strong>ed, <strong>G</strong>reen, <strong>B</strong>lue.</li>
+<li><code>color: rgb(R, G, B)</code></li>
+<li><strong>red</strong>: <code>rgb(255, 0, 0)</code></li>
+<li><strong>green</strong>: <code>rgb(0, 255, 0)</code></li>
+<li><strong>blue</strong>: <code>rgb(0, 0, 255)</code></li>
+</ul>
+<a class="header" href="#grey-scale-black--white" id="grey-scale-black--white"><h3>Grey Scale (Black / White)</h3></a>
+<p>when all values for <code>R</code>, <code>G</code> and <code>B</code> are the same, we move across a greyscale where <code>0</code> is black and <code>255</code> is white!</p>
+<pre><code class="language-css">/* black */ 
+rgb(0,0,0)
+
+/* dark grey */ 
+rgb(20,20,20)
+
+/* light grey */ 
+rgb(220,220,220)
+
+/* white */ 
+rgb(255,255,255)
+</code></pre>
+<a class="header" href="#alpha-channel-opacity" id="alpha-channel-opacity"><h3>Alpha-Channel (Opacity)</h3></a>
+<ul>
+<li>Syntax: <code>color: rgba(R,G,B,a)</code></li>
+<li>transparent when <code>a=0</code></li>
+<li>no opacity when <code>a=1</code> (default when using rgb)</li>
+</ul>
 <a class="header" href="#hex" id="hex"><h1>HEX</h1></a>
-<p>Each of the 6 HEX-values can be [0-9][A-F], which make up to 16 possibilities: <code>(16x16, 16x16, 16x16) = (255, 255, 255)</code>. </p>
+<p>Each of the 6 HEX-values can be [0-9][A-F], which make up to 16 possibilities: <code>(16x16, 16x16, 16x16) = (0-255, 0-255, 0-255)</code>.</p>
+<a class="header" href="#dec---hex" id="dec---hex"><h3>DEC -&gt; HEX</h3></a>
+<ul>
+<li><code>rgb(0,0,0) = #000000</code></li>
+<li><code>rgb(255,255,255) = #FFFFFF</code></li>
+</ul>
+<a class="header" href="#abbreviations" id="abbreviations"><h3>Abbreviations</h3></a>
+<ul>
+<li><code>#000000 = #000</code></li>
+<li><code>#FFFFFF = #FFF</code></li>
+<li><code>#AA33BB = #A3B</code></li>
+</ul>
+<h2 style="text-align: center">Table</h2>
+<table><thead><tr><th>Decimal</th><th>Binary</th><th>Hex</th></tr></thead><tbody>
+<tr><td>0</td><td>0000 0000</td><td>0</td></tr>
+<tr><td>1</td><td>0000 0001</td><td>1</td></tr>
+<tr><td>2</td><td>0000 0010</td><td>2</td></tr>
+<tr><td>3</td><td>0000 0011</td><td>3</td></tr>
+<tr><td>4</td><td>0000 0100</td><td>4</td></tr>
+<tr><td>5</td><td>0000 0101</td><td>5</td></tr>
+<tr><td>6</td><td>0000 0110</td><td>6</td></tr>
+<tr><td>7</td><td>0000 0111</td><td>7</td></tr>
+<tr><td>8</td><td>0000 1000</td><td>8</td></tr>
+<tr><td>9</td><td>0000 1001</td><td>9</td></tr>
+<tr><td>10</td><td>0000 1010</td><td>A</td></tr>
+<tr><td>11</td><td>0000 1011</td><td>B</td></tr>
+<tr><td>12</td><td>0000 1100</td><td>C</td></tr>
+<tr><td>13</td><td>0000 1101</td><td>D</td></tr>
+<tr><td>14</td><td>0000 1110</td><td>E</td></tr>
+<tr><td>15</td><td>0000 1111</td><td>F</td></tr>
+<tr><td>16</td><td>0001 0000</td><td>10 (1+0)</td></tr>
+<tr><td>17</td><td>0001 0001</td><td>11 (1+1)</td></tr>
+</tbody></table>
 <a class="header" href="#hsla" id="hsla"><h1>HSL(a)</h1></a>
+<p><strong>IMPORTANT</strong>: Better use <a href="css_colors-rgb.html">RGB</a> or <a href="css_colors-hex.html">HEX</a>, since HSL is not supported in all versions of all browsers.</p>
 <ul>
 <li><strong>Hue</strong>: Value between 0-360. Degree on the color-circle:<br><code>0:red, 120:green, 240:blue</code>.</li>
 <li><strong>Saturation</strong>: Percentage 0-100% (or 0-1). Mixes the color with grey:<br><code>100%:pure, 0%:grey</code></li>
 <li><strong>Lightness</strong>: Percentage 0-100% (or 0-1). Normal value is 50%:<br><code>0%:black, 50%:normal, 100%: white</code></li>
-<li><strong>a</strong>: Percentage 0-100% (or 0-1). alpha-channel = opacity. Optional parameter. <code>0:transparent, 1:no-opacity</code></li>
+<li><strong>a</strong>: Percentage 0-100% (or 0-1). alpha-channel = opacity. Optional parameter, works the same as with <a href="css_colors-rgb.html#alpha-channel-opacity">RGB</a>: <code>0:transparent, 1:no-opacity</code></li>
 </ul>
 <pre><code class="language-css">hsl(0,   1, 0.5)   /* =red   =rgb(255,0,0) */
 hsl(120, 1, 0.5)   /* =green =rgb(0,255,0) */
@@ -546,7 +608,6 @@ font-style italic;
 font-weight: normal; /* = 400 */
 font-weight: bold;   /* = 700 */
 font-weight: 900; 	 /* valid values: 100,200,300,..,900 */
-
 
 /* Text Decoration */ 
 text-decoration: none;

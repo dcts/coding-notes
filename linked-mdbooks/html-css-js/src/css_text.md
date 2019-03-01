@@ -17,7 +17,6 @@ font-weight: normal; /* = 400 */
 font-weight: bold;   /* = 700 */
 font-weight: 900; 	 /* valid values: 100,200,300,..,900 */
 
-
 /* Text Decoration */ 
 text-decoration: none;
 text-decoration: overline;

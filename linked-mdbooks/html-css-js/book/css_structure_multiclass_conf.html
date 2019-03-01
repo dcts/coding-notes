@@ -138,10 +138,8 @@
                     <main>
                         <a class="header" href="#conflicts-multiple-class" id="conflicts-multiple-class"><h1>Conflicts (multiple class)</h1></a>
 <ul>
-<li>Ordering of class-selectors does matter inside the CSS-file</li>
+<li>Ordering of selectors with same specificity does matter inside the CSS-file</li>
 <li>CSS-file: when two css-selectors have the same specificity (e.g. they are both classes) and conflicting styles, then the style of the selector is applied that is written at the end of the file (the latest instruction is applied)</li>
-<li>Ordering of the class-attribute-values (inside the HTML-file) does <strong>not</strong> matter</li>
-<li>if the ordering switches inside the CSS-file</li>
 </ul>
 <pre><code class="language-html">&lt;!-- HTML --&gt;
 &lt;p class=&quot;red green&quot;&gt;
@@ -150,13 +148,14 @@
 </code></pre>
 <pre><code class="language-css">/* CSS */ 
 .green {
-  text-transform: uppercase;
+  color: green;
 }
 .red {
-  text-transform: capitalize;
+  color: red;
 }
 </code></pre>
 <ul>
+<li>Notice that the ordering of the class-attribute-values inside the HTML-tag does <strong>not</strong> matter, e.g. <code>&lt;p class=&quot;red green&quot;&gt;</code> will render the same as <code>&lt;p class=&quot;green red&quot;&gt;</code>.</li>
 <li>a chained class-selector is more specific than an pure class selector, but less specific than a id-selector!</li>
 </ul>
 <pre><code class="language-html">&lt;!-- HTML --&gt;

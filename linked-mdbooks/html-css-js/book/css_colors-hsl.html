@@ -137,11 +137,12 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#hsla" id="hsla"><h1>HSL(a)</h1></a>
+<p><strong>IMPORTANT</strong>: Better use <a href="css_colors-rgb.html">RGB</a> or <a href="css_colors-hex.html">HEX</a>, since HSL is not supported in all versions of all browsers.</p>
 <ul>
 <li><strong>Hue</strong>: Value between 0-360. Degree on the color-circle:<br><code>0:red, 120:green, 240:blue</code>.</li>
 <li><strong>Saturation</strong>: Percentage 0-100% (or 0-1). Mixes the color with grey:<br><code>100%:pure, 0%:grey</code></li>
 <li><strong>Lightness</strong>: Percentage 0-100% (or 0-1). Normal value is 50%:<br><code>0%:black, 50%:normal, 100%: white</code></li>
-<li><strong>a</strong>: Percentage 0-100% (or 0-1). alpha-channel = opacity. Optional parameter. <code>0:transparent, 1:no-opacity</code></li>
+<li><strong>a</strong>: Percentage 0-100% (or 0-1). alpha-channel = opacity. Optional parameter, works the same as with <a href="css_colors-rgb.html#alpha-channel-opacity">RGB</a>: <code>0:transparent, 1:no-opacity</code></li>
 </ul>
 <pre><code class="language-css">hsl(0,   1, 0.5)   /* =red   =rgb(255,0,0) */
 hsl(120, 1, 0.5)   /* =green =rgb(0,255,0) */

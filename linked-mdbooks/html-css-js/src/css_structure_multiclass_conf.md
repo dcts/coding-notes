@@ -1,10 +1,7 @@
 # Conflicts (multiple class)
 
-- Ordering of class-selectors does matter inside the CSS-file
+- Ordering of selectors with same specificity does matter inside the CSS-file
 - CSS-file: when two css-selectors have the same specificity (e.g. they are both classes) and conflicting styles, then the style of the selector is applied that is written at the end of the file (the latest instruction is applied)
-- Ordering of the class-attribute-values (inside the HTML-file) does **not** matter
-- if the ordering switches inside the CSS-file
-
 ```html
 <!-- HTML -->
 <p class="red green">
@@ -15,13 +12,14 @@
 ```css
 /* CSS */ 
 .green {
-  text-transform: uppercase;
+  color: green;
 }
 .red {
-  text-transform: capitalize;
+  color: red;
 }
 ```
 
+- Notice that the ordering of the class-attribute-values inside the HTML-tag does **not** matter, e.g. `<p class="red green">` will render the same as `<p class="green red">`.
 - a chained class-selector is more specific than an pure class selector, but less specific than a id-selector!
 ```html
 <!-- HTML -->

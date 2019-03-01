@@ -139,31 +139,34 @@
                         <a class="header" href="#chaining-selectors" id="chaining-selectors"><h1>Chaining Selectors</h1></a>
 <p>We have 3 types of selectors <code>name</code>, <code>class</code> and <code>id</code>. We can combine these 3 different types by chaining them. We have to respect some rules:</p>
 <ul>
-<li>if you include a nameselector, start with the name-selector</li>
-<li>you can't chain multiple name-selectors</li>
+<li>chaining always works with the <code>.</code> or <code>#</code> operator.</li>
+<li>no spaces! Spaces are used for <a href="css_structure_nesting.html">nesting</a>, which is a different concept!</li>
+<li>if you include a name-selector, start with the name-selector</li>
+<li>you can't chain multiple name-selectors (one element cant be part of two tags)</li>
+<li>if you want to use two tagnames, you probably want to use <a href="css_structure_nesting.html">nesting</a></li>
 <li>chain as much class-selectors as you want by adding <code>.classname</code></li>
 <li>you can chain also <strong>one</strong> id-selector by adding <code>#idname</code></li>
-<li>no spaces</li>
 </ul>
 <a class="header" href="#combinations-of-names-classes-ids" id="combinations-of-names-classes-ids"><h2>Combinations of Names, Classes, IDs</h2></a>
-<a class="header" href="#a1-multiple-classes" id="a1-multiple-classes"><h3>1. multiple classes</h3></a>
-<p>selects all html elements with class <code>red</code></p>
-<pre><code class="language-css">/* multiple classes (no id, no name) */
-.red.bold { ... }
+<pre><code class="language-css">/* name */
+h1 { ... }
 
-/* multiple classes and id (no name) */
-.red.bold#id1 { ... }
-
-/* name (h1) and id */
-h1#id1 { ... }
-
-/* name (h1) and class */
+/* name &amp; class */
 h1.class1 { ... }
 
-/* name (h1) and multiple classes*/
+/* classes */
+.red.bold { ... }
+
+/* classes &amp; id */
+.red.bold#id1 { ... }
+
+/* name &amp; classes */
 h1.class1.class2.class3 { ... }
 
-/* name (h1) with multiple classes and id */
+/* name &amp; id */
+h1#id1 { ... }
+
+/* name &amp; classes &amp; id */
 /* ordering doesnt matter */
 h1.red.bold#id1 { ... }
 h1.bold#id1.red { ... }   
