@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Html/CSS notes</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li><ol class="section"><li><a href="html_structure.html"><strong aria-hidden="true">1.1.</strong> Structure</a></li><li><a href="html_meta_tags.html"><strong aria-hidden="true">1.2.</strong> Meta Tags</a></li><li><a href="html_mainTags.html"><strong aria-hidden="true">1.3.</strong> Main Tags</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Html/CSS notes</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#html" id="html"><h1>HTML</h1></a>
+<p><strong>HTML</strong> = <strong>H</strong>yper<strong>T</strong>ext<strong>M</strong>arkup<strong>L</strong>anguage</p>
+<a class="header" href="#resources-for-design" id="resources-for-design"><h3>Resources for design</h3></a>
+<ul>
+<li><strong>icons</strong>
+<ul>
+<li><a href="http://iconstore.co/">Icon Store</a></li>
+<li><a href="https://thenounproject.com/">The Noun Project</a></li>
+<li><a href="https://nucleoapp.com/">NucleoApp</a></li>
+<li><a href="https://konpa.github.io/devicon/">Devicon (open source logos etc!)</a></li>
+</ul>
+</li>
+<li><strong>fonts</strong>
+<ul>
+<li><a href="https://fonts.google.com/">Google Fonts</a> — choose fonts and load via <code>link</code> tag</li>
+<li><a href="https://fontawesome.com/">FontsAwesome</a> — common social media plattforms as font (svg)</li>
+<li><a href="https://www.fontsquirrel.com/">FontsSquirrel</a> — fonts to use locally</li>
+</ul>
+</li>
+<li><strong>colors</strong>
+<ul>
+<li><a href="http://www.colorzilla.com/chrome/">ColorZilla</a> — ColorPicker for chrome!</li>
+<li><a href="https://coolors.co/">Coolors</a> — color scheme generator</li>
+<li><a href="https://colorhunt.co/">Color Hunt</a> — color scheme generator</li>
+</ul>
+</li>
+<li><strong>background images</strong>
+<ul>
+<li><a href="https://www.pexels.com/">Pexels</a> — Bannerimages, random image picker</li>
+</ul>
+</li>
+<li><strong>CSS Libraries</strong>
+<ul>
+<li><a href="https://getbootstrap.com/">Bootstrap</a> — widely used. By ex-twitter employees.</li>
+<li><a href="https://material.io/design/">Material Design</a> — alternative (by Google)</li>
+</ul>
+</li>
+<li><strong><a href="https://semantic-ui.com/">Semantic UI</a></strong> — beautiful animations</li>
+<li><strong><a href="https://dribbble.com/">Dribble</a></strong> — GitHub for designers, perfect for inspiration</li>
+<li><strong><a href="">Product Hunt</a></strong> — startups posting their products. You can get inspiration of the design of other startups.</li>
+</ul>
+<a class="header" href="#landing-page" id="landing-page"><h3>Landing Page</h3></a>
+<ul>
+<li>clear value proposition</li>
+<li>clear design</li>
+<li>call-to-action</li>
+<li>CRM (customer relation management)</li>
+</ul>
+<a class="header" href="#structure" id="structure"><h1>Structure</h1></a>
+<p>the basic structure of a document looks like this:</p>
+<pre><code class="language-html">&lt;/!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title of Webpage&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!--ADD CONTENT--&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ul>
+<li><strong>Head</strong>: all &quot;intelligence&quot; goes here. Links to stylesheets, fonts, meta-tags for SEO etc.</li>
+<li><strong>Body</strong>: all content goes here!</li>
+<li><strong>tag</strong>: always starttag and endtag.</li>
+<li><strong>self-closing tag</strong>: no end-tag needed. e.g.: <code>img</code> or <code>meta</code> or <code>br</code></li>
+<li><strong>attribute</strong>: attribute.name <code>width</code> and attribute.value <code>10px</code></li>
+</ul>
+<a class="header" href="#core-syntax" id="core-syntax"><h2>core syntax</h2></a>
+<p><img src="/pics/html-syntax.png" width="350"/></p>
+<a class="header" href="#meta-tags" id="meta-tags"><h1>Meta Tags</h1></a>
+<pre><code class="language-html">&lt;!-- put title inside --&gt;
+&lt;title&gt;&lt;/title&gt;
+
+&lt;!-- meta description --&gt;
+&lt;meta name=&quot;description&quot; content=&quot;insert description here!&quot; /&gt;
+
+&lt;!-- meta charset --&gt;
+&lt;meta charset=&quot;utf-8&quot; /&gt;
+
+&lt;!-- LINK css-style (type attribute is neede in html 4 and lower) --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;URL&quot; /&gt;
+
+&lt;!-- LINK JS files --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-3.3.1.js&quot;&gt;&lt;/script&gt;
+        
+
+&lt;!-- OPEN GRAPH OBJECT --&gt;
+&lt;!-- required for OG-object --&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;&quot; /&gt;
+&lt;meta property=&quot;og:type&quot;  content=&quot;&quot; /&gt;
+&lt;meta property=&quot;og:url&quot;   content=&quot;&quot; /&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;&quot; /&gt;
+&lt;!-- additional --&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;&quot; /&gt;
+
+&lt;!-- TWITTER CARDS --&gt;
+&lt;meta name=&quot;twitter:card&quot;        content=&quot;&quot; /&gt;
+&lt;meta name=&quot;twitter:site&quot;        content=&quot;@username&quot; /&gt;
+&lt;meta name=&quot;twitter:title&quot;       content=&quot;&quot; /&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;&quot; /&gt;
+
+
+</code></pre>
+<a class="header" href="#main-tags" id="main-tags"><h1>Main Tags</h1></a>
+<pre><code class="language-html">&lt;!-- 3 main tags --&gt;
+&lt;html&gt;&lt;/html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+
+&lt;!-- headings --&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h2&gt;&lt;/h2&gt;
+&lt;h3&gt;&lt;/h3&gt;
+&lt;h4&gt;&lt;/h4&gt;
+&lt;h5&gt;&lt;/h5&gt;
+&lt;h6&gt;&lt;/h6&gt;
+
+&lt;!-- paragraph --&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;!-- hyperlinks --&gt;
+&lt;a href=&quot;url&quot;&gt;my linked text&lt;/a&gt;
+
+&lt;!-- images --&gt;
+&lt;img src=&quot;url&quot; /&gt;
+
+&lt;!-- unordered lists --&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- ordered list --&gt;
+&lt;ol&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- div elements --&gt;
+&lt;div&gt;&lt;/div&gt;
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
