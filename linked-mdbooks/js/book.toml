@@ -1,0 +1,5 @@
+[book]
+authors = ["thomas starzynski"]
+multilingual = false
+src = "src"
+title = "javascript"
