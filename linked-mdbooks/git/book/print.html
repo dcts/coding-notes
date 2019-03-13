@@ -224,7 +224,10 @@ git checkout -b &lt;newBranch&gt;   # creates new branch and moves into it
 git checkout &lt;existingBranch&gt; # switches to an existing branch
 
 # merge branch 
-??
+git checkout master        # switch to master branch
+git pull origin master     # pull data from remote (to be up to date)
+git merge branchToMerge    # master &lt;- branchToMerge        
+git push origin master     # push updated masterbranch to remote
 
 # discarding all changes that show up with &quot;git status&quot;
 git checkout .          # forgot -&gt; ??
