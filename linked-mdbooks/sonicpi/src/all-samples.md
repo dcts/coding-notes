@@ -1,8 +1,9 @@
 # List of all Samples
 
+This documentation page is for fast browsing through **all samples in SonicPi Version 3.1.0**! All flac files have been converted to mp3 to make them easier playable through webbrowsers. Feel free to share this! Direct link to this page: 
+<br>[https://dcts.github.io/coding-notes/linked-mdbooks/sonicpi/book/all-samples.html](https://dcts.github.io/coding-notes/linked-mdbooks/sonicpi/book/all-samples.html)
 
-
-Links to original samples:
+## Categories
 
 - [Drums](#drums)
 - [Electric sounds](#electric-sounds)
@@ -18,7 +19,7 @@ Links to original samples:
 - [Glitchy Sounds](#glitchy-sounds)
 - [Mehackit sounds](#mehackit-sounds)
 
-## Drums
+### Drums
 [go to top](#list-of-all-samples)
 
 <div>
@@ -143,7 +144,7 @@ Links to original samples:
 </div>
 
 
-## Electric sounds
+### Electric sounds
 [go to top](#list-of-all-samples)
 
 <div>
@@ -298,7 +299,7 @@ Links to original samples:
 </div>
 
 
-## Guitar
+### Guitar
 [go to top](#list-of-all-samples)
 
 <div>
@@ -327,7 +328,7 @@ Links to original samples:
 </div>
 
 
-## Misc
+### Misc
 [go to top](#list-of-all-samples)
 
 <div>
@@ -350,7 +351,7 @@ Links to original samples:
 </div>
 
 
-## Percussion
+### Percussion
 [go to top](#list-of-all-samples)
 
 <div>
@@ -415,7 +416,7 @@ Links to original samples:
 </div>
 
 
-## Ambient
+### Ambient
 [go to top](#list-of-all-samples)
 
 <div>
@@ -486,7 +487,7 @@ Links to original samples:
 </div>
 
 
-## Bass
+### Bass
 [go to top](#list-of-all-samples)
 
 <div>
@@ -545,7 +546,7 @@ Links to original samples:
 </div>
 
 
-## Bass Drums
+### Bass Drums
 [go to top](#list-of-all-samples)
 
 <div>
@@ -628,7 +629,7 @@ Links to original samples:
 </div>
 
 
-## Snares
+### Snares
 [go to top](#list-of-all-samples)
 
 <div>
@@ -657,7 +658,7 @@ Links to original samples:
 </div>
 
 
-## Loops
+### Loops
 [go to top](#list-of-all-samples)
 
 <div>
@@ -764,7 +765,7 @@ Links to original samples:
 </div>
 
 
-## Tabla
+### Tabla
 [go to top](#list-of-all-samples)
 
 <div>
@@ -925,7 +926,7 @@ Links to original samples:
 </div>
 
 
-## Vinyl
+### Vinyl
 [go to top](#list-of-all-samples)
 
 <div>
@@ -954,7 +955,7 @@ Links to original samples:
 </div>
 
 
-## Glitchy sounds
+### Glitchy sounds
 [go to top](#list-of-all-samples)
 
 <div>
@@ -1007,7 +1008,7 @@ Links to original samples:
 </div>
 
 
-## Mehackit sounds
+### Mehackit sounds
 [go to top](#list-of-all-samples)
 
 <div>
