@@ -32,10 +32,7 @@
     </head>
     <body class="light">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = "light";
-        </script>
+        <script type="text/javascript">var path_to_root = "";</script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
@@ -57,7 +54,7 @@
         <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
-            if (theme === null || theme === undefined) { theme = default_theme; }
+            if (theme === null || theme === undefined) { theme = 'light'; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
         </script>
@@ -92,7 +89,7 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -111,7 +108,6 @@
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
-                            
                         </div>
                     </div>
                 </div>
@@ -449,10 +445,18 @@ passwd                   # changes password of current user!
 -rw-r----- 640 # read for owner and group only. Owner can also write.
 -rw------- 600 # read/write for owner only
 -r-------- 400 # read for owner only. No permission for anybody else.
+</code></pre>
+<a class="header" href="#change-permissions-2-ways-numeric-or-symbolic" id="change-permissions-2-ways-numeric-or-symbolic"><h3>Change Permissions (2 ways: numeric or symbolic)</h3></a>
+<pre><code class="language-bash"># numeric syntax (-R = rekursive)
+chmod 777 &lt;dir&gt;     # permission 777 for &lt;dir&gt; 
+chmod -R 777 &lt;dir&gt;  # permission 777 for &lt;dir&gt; and all subdir &amp; files inside
+chmod 777 &lt;file&gt;    # permission 777 for &lt;file&gt;
 
-# CHANGE PERMISSION
-chmod -R 777 &lt;dir&gt; # permission 777 for &lt;dir&gt; and all subdir &amp; files inside
-chmod 777 &lt;file&gt;   # permission 777 for &lt;file&gt;
+# symbolic syntax: X, W or E for U(ser), G(roup), O(ther) or A(ll)
+chmod a+xwe &lt;dir&gt;  # add all permission for all
+chmod u+e &lt;file&gt;   # add execute permission only for user
+chmod a-e &lt;file&gt;   # remove execute permission for all users
+chmod a-wr &lt;file&gt;  # remove write and read permission for all users
 </code></pre>
 
                     </main>

@@ -37,8 +37,19 @@ passwd                   # changes password of current user!
 -rw-r----- 640 # read for owner and group only. Owner can also write.
 -rw------- 600 # read/write for owner only
 -r-------- 400 # read for owner only. No permission for anybody else.
+```
 
-# CHANGE PERMISSION
-chmod -R 777 <dir> # permission 777 for <dir> and all subdir & files inside
-chmod 777 <file>   # permission 777 for <file>
+### Change Permissions (2 ways: numeric or symbolic)
+
+```bash
+# numeric syntax (-R = rekursive)
+chmod 777 <dir>     # permission 777 for <dir> 
+chmod -R 777 <dir>  # permission 777 for <dir> and all subdir & files inside
+chmod 777 <file>    # permission 777 for <file>
+
+# symbolic syntax: X, W or E for U(ser), G(roup), O(ther) or A(ll)
+chmod a+xwe <dir>  # add all permission for all
+chmod u+e <file>   # add execute permission only for user
+chmod a-e <file>   # remove execute permission for all users
+chmod a-wr <file>  # remove write and read permission for all users
 ```

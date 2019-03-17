@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Users and Permissions - bash-linux</title>
+        <title>TouchOSC - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="linux.html"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts_and_vim.html"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts + VIM</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_installing_packages.html"><strong aria-hidden="true">2.6.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html" class="active"><strong aria-hidden="true">2.7.</strong> Users and Permissions</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li><a href="basics-syntax.html"><strong aria-hidden="true">1.1.</strong> Syntax</a></li><li><a href="basics-shortcuts.html"><strong aria-hidden="true">1.2.</strong> Shortcuts</a></li><li><a href="basics-playSound.html"><strong aria-hidden="true">1.3.</strong> Playing Sounds</a></li></ol></li><li><a href="samples.html"><strong aria-hidden="true">2.</strong> Samples</a></li><li><a href="all-samples.html"><strong aria-hidden="true">3.</strong> List of all Samples</a></li><li><a href="touchOSC.html" class="active"><strong aria-hidden="true">4.</strong> TouchOSC</a></li><li><ol class="section"><li><a href="touchOSC-cutoff.html"><strong aria-hidden="true">4.1.</strong> Example: Controlling Cutoff with Slider</a></li><li><a href="touchOSC-sampler.html"><strong aria-hidden="true">4.2.</strong> Example: Sampler</a></li><li><a href="touchOSC-global.html"><strong aria-hidden="true">4.3.</strong> Example: Global Parameters</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -102,7 +102,7 @@
                             
                         </div>
 
-                        <h1 class="menu-title">bash-linux</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -136,51 +136,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#users-and-permissions" id="users-and-permissions"><h1>Users and Permissions</h1></a>
-<pre><code class="language-bash"># USER vs ROOT
-username@machineName:~$  # $-sign: logged in as admin (user)
-username@machineName:~#  # #-sign: logged in as superuser (root user)
-
-# changing between root and user
-whoami             # echos current user
-sudo -su root      # switches to root user
-sudo -s            # switches to root user (same command)
-sudo -su &lt;user&gt;    # switches to &lt;user&gt;
-cat /etc/passwd    # show all users
-
-# ADD NEW USER (when being logged in as root)
-sudo usernew &lt;username&gt;  # creates new user
-sudo deluser &lt;username&gt;  # deletes user
-passwd &lt;user&gt;            # changes password of &lt;user&gt;
-passwd                   # changes password of current user!
-</code></pre>
-<p><strong>Permission Encoding</strong></p>
-<p><img src="./pics/permissions.png" width=400px></p>
-<pre><code class="language-bash"># EXAMPLES
-# encoding     # description
--rwxrwxrwx 777 # read, write and execute for all users    
--rwxr-xr-x 755 # read/execute for all users. Owner has alos write permission
--rwxr-x--- 750 # read/execute for owner and group. Owner has also write permission
--rwx------ 700 # read/write/execute only for the owner
--rw-rw-rw- 666 # read/write for all
--rw-rw-r-- 664 # read for all. write only for owner and group.
--rw-rw---- 660 # read/write only for owner and group
--rw-r--r-- 644 # read for all. Owner can write also.
--rw-r----- 640 # read for owner and group only. Owner can also write.
--rw------- 600 # read/write for owner only
--r-------- 400 # read for owner only. No permission for anybody else.
-</code></pre>
-<a class="header" href="#change-permissions-2-ways-numeric-or-symbolic" id="change-permissions-2-ways-numeric-or-symbolic"><h3>Change Permissions (2 ways: numeric or symbolic)</h3></a>
-<pre><code class="language-bash"># numeric syntax (-R = rekursive)
-chmod 777 &lt;dir&gt;     # permission 777 for &lt;dir&gt; 
-chmod -R 777 &lt;dir&gt;  # permission 777 for &lt;dir&gt; and all subdir &amp; files inside
-chmod 777 &lt;file&gt;    # permission 777 for &lt;file&gt;
-
-# symbolic syntax: X, W or E for U(ser), G(roup), O(ther) or A(ll)
-chmod a+xwe &lt;dir&gt;  # add all permission for all
-chmod u+e &lt;file&gt;   # add execute permission only for user
-chmod a-e &lt;file&gt;   # remove execute permission for all users
-chmod a-wr &lt;file&gt;  # remove write and read permission for all users
+                        <a class="header" href="#touchosc-example" id="touchosc-example"><h1>TouchOSC Example</h1></a>
+<p>To control SonicPi with TouchOSC, you can run following testexample:</p>
+<pre><code class="language-ruby">
 </code></pre>
 
                     </main>
@@ -188,11 +146,15 @@ chmod a-wr &lt;file&gt;  # remove write and read permission for all users
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="bash_installing_packages.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="all-samples.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
+                        
+                            <a rel="next" href="touchOSC-cutoff.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -202,11 +164,15 @@ chmod a-wr &lt;file&gt;  # remove write and read permission for all users
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="bash_installing_packages.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="all-samples.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
+                
+                    <a href="touchOSC-cutoff.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 

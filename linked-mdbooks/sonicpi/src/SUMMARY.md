@@ -8,3 +8,10 @@
 - [Samples](./samples.md)
 
 - [List of all Samples](./all-samples.md)
+
+- [TouchOSC](./touchOSC.md)
+	- [Example: Controlling Cutoff with Slider](./touchOSC-cutoff.md)
+	- [Example: Sampler](./touchOSC-sampler.md)
+	- [Example: Global Parameters](./touchOSC-global.md)
+
+

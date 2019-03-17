@@ -6,6 +6,9 @@ git branch                    # shows all branches
 git checkout -b <newBranch>   # creates new branch and moves into it
 git checkout <existingBranch> # switches to an existing branch
 
+# go to previous commit
+git checkout <commit-hash>    # goes back to commit XY
+
 # merge branch 
 git checkout master        # switch to master branch
 git pull origin master     # pull data from remote (to be up to date)
