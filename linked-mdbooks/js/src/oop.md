@@ -1,45 +1,12 @@
 # OOP
 
-## Object example
-```js
-var cat = {
-    name: "Whiskers",
-    legs: 4,
-    tails: 1,
-    enemies: ["Water", "Dogs"]
-};
-console.log("my cats name: " + cat.name);    // DOT NOTATION
-console.log("my cats name: " + cat["name"])  // BRACKET NOTATION
-console.log("nbr of legs: " + cat.legs);     // DOT NOTATION
-console.log("nbr of legs: " + cat["legs"];   // BRACKET NOTATION
-```
+- OOP = Object Oriented Programming
+- way of organizing code and the overall programm
+- real world things can be represented as objects and objects can have different relations to each other
+- basically a simplification of complex relationsships as we know them from reality
 
-### Add Properties to Object
-```js
-var myObject = {
-	prop1: "something";
-}
-myObject.prop2 = "something else";              // dot notation
-myObject["prop3"] = "a third propertie added";  // bracket notation
-delete myObject.prop3;                          // third property deleted!
-```
+## Content of this Chapter
+1. [Objects](oop_objects.md)
+2. [JSON](oop_json.md)
+3. [Classes](oop_classes.md)
 
-### Check if Property exists
-```js
-myObject.hasOwnProperty("property"); 
-```
-
-
-### Brackets vs Dot notation
-```js
-// bracket notation allows the use of characters 
-// that can't be used with dot notation:
-var foo = myForm.foo[];     // incorrect syntax
-var foo = myForm["foo[]"];  // correct syntax
-
-// Secondly, bracket notation is useful when dealing
-// with property names which vary in a predictable way:
-for (var i = 0; i < 10; i++) {
-    someFunction(myForm["myControlNumber" + i]);
-}
-```

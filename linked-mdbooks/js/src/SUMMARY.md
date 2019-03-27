@@ -18,6 +18,8 @@
 	- [Switch](./loops-switch.md)
 - [Functions](./functions.md)
 - [OOP](./oop.md)
+	- [Objects](./oop_objects.md)
 	- [JSON](./oop-json.md)
+	- [Classes](./oop_classes.md)	
 - [ES06](./es06.md)
 - [QUESTIONS](./questions.md)
