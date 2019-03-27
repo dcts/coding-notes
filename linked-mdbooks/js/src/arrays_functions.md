@@ -11,8 +11,8 @@
   - [.filter()](arrays_functions.md#filter): return filtered array
   - [.findIndex()](arrays_functions.md#findindex): find first index where a condition is met
   - [.reduce()](arrays_functions.md#reduce): operates with 2 elements of array in each step
-  - [.some()](arrays_functions.md#some): returns T or F if some elements 
-  - [.every()](arrays_functions.md#every)
+  - [.some()](arrays_functions.md#some): returns T or F if at least one arrayelement meets a given condition 
+  - [.every()](arrays_functions.md#every): returns T or F it all arrayelements meet a given condition
 
 ## `.sort()`
 ```js
@@ -56,7 +56,6 @@ array.splice(0,2, -1,0,1); // first two elements are removed [0,1]
                            // injected elements are [-1,0,1] 
                            // array after functioncall: [-1,0,1,2,3,4]
                            // removed elements [0,1] are returned as new array
-
 ```
 
 ## `.forEach()`

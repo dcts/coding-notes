@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>QUESTIONS - javascript</title>
+        <title>Factory Functions - javascript</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li><a href="basics-datatypes.html"><strong aria-hidden="true">1.1.</strong> Datatypes</a></li><li><a href="basics-variables.html"><strong aria-hidden="true">1.2.</strong> Variables</a></li><li><a href="basics-conversions.html"><strong aria-hidden="true">1.3.</strong> Type-Conversions</a></li><li><a href="basics-comparison.html"><strong aria-hidden="true">1.4.</strong> Comparison Operations</a></li><li><a href="basics-truthly.html"><strong aria-hidden="true">1.5.</strong> Truthly + Falsly</a></li></ol></li><li><a href="strings.html"><strong aria-hidden="true">2.</strong> Strings</a></li><li><a href="arrays.html"><strong aria-hidden="true">3.</strong> Arrays</a></li><li><ol class="section"><li><a href="arrays_example.html"><strong aria-hidden="true">3.1.</strong> Array Example</a></li><li><a href="arrays_functions.html"><strong aria-hidden="true">3.2.</strong> Array Functions</a></li></ol></li><li><a href="math.html"><strong aria-hidden="true">4.</strong> Math</a></li><li><ol class="section"><li><a href="math-arithmeticoperators.html"><strong aria-hidden="true">4.1.</strong> Arithmetic Operators</a></li></ol></li><li><a href="loops.html"><strong aria-hidden="true">5.</strong> Loops</a></li><li><ol class="section"><li><a href="loops-for.html"><strong aria-hidden="true">5.1.</strong> For-Loop</a></li><li><a href="loops-foreach.html"><strong aria-hidden="true">5.2.</strong> For-Each</a></li><li><a href="loops-while.html"><strong aria-hidden="true">5.3.</strong> While/Do-While</a></li><li><a href="loops-ifelse.html"><strong aria-hidden="true">5.4.</strong> If Else</a></li><li><a href="loops-switch.html"><strong aria-hidden="true">5.5.</strong> Switch</a></li></ol></li><li><a href="functions.html"><strong aria-hidden="true">6.</strong> Functions</a></li><li><ol class="section"><li><a href="functions_declaration.html"><strong aria-hidden="true">6.1.</strong> Function Declaration</a></li><li><a href="functions_expression.html"><strong aria-hidden="true">6.2.</strong> Function Expression / Anonymous Function</a></li><li><a href="functions_arrow.html"><strong aria-hidden="true">6.3.</strong> Arrow Function (ES06)</a></li><li><a href="functions_default-parameters.html"><strong aria-hidden="true">6.4.</strong> Default Parameters (ES06)</a></li></ol></li><li><a href="oop.html"><strong aria-hidden="true">7.</strong> OOP</a></li><li><ol class="section"><li><a href="oop_objects.html"><strong aria-hidden="true">7.1.</strong> Objects</a></li><li><ol class="section"><li><a href="oop_objects-example.html"><strong aria-hidden="true">7.1.1.</strong> Object Example (with getters/setters)</a></li><li><a href="oop_objects-bracketDotNotation.html"><strong aria-hidden="true">7.1.2.</strong> Brackets vs Dot Notation</a></li><li><a href="oop_objects-constObjects.html"><strong aria-hidden="true">7.1.3.</strong> Const Objects</a></li><li><a href="oop_objects-destructedAssignments.html"><strong aria-hidden="true">7.1.4.</strong> Destructed Assignments</a></li></ol></li><li><a href="oop_obj-methods.html"><strong aria-hidden="true">7.2.</strong> Build In Object Methods</a></li><li><a href="oop_factory-functions.html"><strong aria-hidden="true">7.3.</strong> Factory Functions</a></li><li><a href="oop_classes.html"><strong aria-hidden="true">7.4.</strong> Classes</a></li><li><a href="oop-json.html"><strong aria-hidden="true">7.5.</strong> JSON</a></li></ol></li><li><a href="es06.html"><strong aria-hidden="true">8.</strong> ES06</a></li><li><a href="questions.html" class="active"><strong aria-hidden="true">9.</strong> QUESTIONS</a></li></ol>
+            <ol class="chapter"><li><a href="basics.html"><strong aria-hidden="true">1.</strong> Basics</a></li><li><ol class="section"><li><a href="basics-datatypes.html"><strong aria-hidden="true">1.1.</strong> Datatypes</a></li><li><a href="basics-variables.html"><strong aria-hidden="true">1.2.</strong> Variables</a></li><li><a href="basics-conversions.html"><strong aria-hidden="true">1.3.</strong> Type-Conversions</a></li><li><a href="basics-comparison.html"><strong aria-hidden="true">1.4.</strong> Comparison Operations</a></li><li><a href="basics-truthly.html"><strong aria-hidden="true">1.5.</strong> Truthly + Falsly</a></li></ol></li><li><a href="strings.html"><strong aria-hidden="true">2.</strong> Strings</a></li><li><a href="arrays.html"><strong aria-hidden="true">3.</strong> Arrays</a></li><li><ol class="section"><li><a href="arrays_example.html"><strong aria-hidden="true">3.1.</strong> Array Example</a></li><li><a href="arrays_functions.html"><strong aria-hidden="true">3.2.</strong> Array Functions</a></li></ol></li><li><a href="math.html"><strong aria-hidden="true">4.</strong> Math</a></li><li><ol class="section"><li><a href="math-arithmeticoperators.html"><strong aria-hidden="true">4.1.</strong> Arithmetic Operators</a></li></ol></li><li><a href="loops.html"><strong aria-hidden="true">5.</strong> Loops</a></li><li><ol class="section"><li><a href="loops-for.html"><strong aria-hidden="true">5.1.</strong> For-Loop</a></li><li><a href="loops-foreach.html"><strong aria-hidden="true">5.2.</strong> For-Each</a></li><li><a href="loops-while.html"><strong aria-hidden="true">5.3.</strong> While/Do-While</a></li><li><a href="loops-ifelse.html"><strong aria-hidden="true">5.4.</strong> If Else</a></li><li><a href="loops-switch.html"><strong aria-hidden="true">5.5.</strong> Switch</a></li></ol></li><li><a href="functions.html"><strong aria-hidden="true">6.</strong> Functions</a></li><li><ol class="section"><li><a href="functions_declaration.html"><strong aria-hidden="true">6.1.</strong> Function Declaration</a></li><li><a href="functions_expression.html"><strong aria-hidden="true">6.2.</strong> Function Expression / Anonymous Function</a></li><li><a href="functions_arrow.html"><strong aria-hidden="true">6.3.</strong> Arrow Function (ES06)</a></li><li><a href="functions_default-parameters.html"><strong aria-hidden="true">6.4.</strong> Default Parameters (ES06)</a></li></ol></li><li><a href="oop.html"><strong aria-hidden="true">7.</strong> OOP</a></li><li><ol class="section"><li><a href="oop_objects.html"><strong aria-hidden="true">7.1.</strong> Objects</a></li><li><ol class="section"><li><a href="oop_objects-example.html"><strong aria-hidden="true">7.1.1.</strong> Object Example (with getters/setters)</a></li><li><a href="oop_objects-bracketDotNotation.html"><strong aria-hidden="true">7.1.2.</strong> Brackets vs Dot Notation</a></li><li><a href="oop_objects-constObjects.html"><strong aria-hidden="true">7.1.3.</strong> Const Objects</a></li><li><a href="oop_objects-destructedAssignments.html"><strong aria-hidden="true">7.1.4.</strong> Destructed Assignments</a></li></ol></li><li><a href="oop_obj-methods.html"><strong aria-hidden="true">7.2.</strong> Build In Object Methods</a></li><li><a href="oop_factory-functions.html" class="active"><strong aria-hidden="true">7.3.</strong> Factory Functions</a></li><li><a href="oop_classes.html"><strong aria-hidden="true">7.4.</strong> Classes</a></li><li><a href="oop-json.html"><strong aria-hidden="true">7.5.</strong> JSON</a></li></ol></li><li><a href="es06.html"><strong aria-hidden="true">8.</strong> ES06</a></li><li><a href="questions.html"><strong aria-hidden="true">9.</strong> QUESTIONS</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -136,21 +136,70 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#questions" id="questions"><h1>QUESTIONS</h1></a>
+                        <a class="header" href="#factory-functions" id="factory-functions"><h1>Factory Functions</h1></a>
 <ul>
-<li>Indendation 4 or 2 spaces? (lol)</li>
+<li>function that creates instances of objects!</li>
+<li>comparison classes vs factory functions (ff)
+<ul>
+<li>classes use <strong><code>constructor()</code></strong> function and <strong><code>new</code></strong> keyword for instantiation.</li>
+<li>classes use <strong><code>this</code></strong> keyword to reference fields, while ff have local scope of all variables defined insied them.</li>
+<li>classes can inherit from other classes (more complex structures possible)</li>
+<li>factoryFunctions are encapsuled -&gt; you can define what you export with <code>Object.freeze({method1, method2})</code> (not sure how that works). See this <a href="https://medium.freecodecamp.org/class-vs-factory-function-exploring-the-way-forward-73258b6a8d15">blogpost</a></li>
 </ul>
+</li>
+</ul>
+<a class="header" href="#factory-function-with-function-expression" id="factory-function-with-function-expression"><h3>Factory Function (with Function Expression)</h3></a>
+<pre><code class="language-js">const createAnimal = (name, age, sound) =&gt; {
+  return {
+    name: name,
+    age: age,
+    makeSound () {
+      console.log(sound);
+    }
+  }
+}
+
+const cat = createAnimal('whiskers', 2, 'miau');
+cat.makeSound();
+
+const dog = createAnimal('Honigkuchen', 5, 'wuff');
+dog.makeSound();
+</code></pre>
+<a class="header" href="#factory-function-with-function-declaration" id="factory-function-with-function-declaration"><h3>Factory Function (with Function Declaration)</h3></a>
+<pre><code class="language-js">function createAnimal(name, age, sound){
+    var name = name;
+    var age = age;
+    function makeSound(){
+        console.log(sound); 
+    }
+    return Object.freeze({  // export object
+        makeSound           // only export function makeSoun, no fields!
+    });
+}
+</code></pre>
+<a class="header" href="#property-value-shorthand-in-factory-functions" id="property-value-shorthand-in-factory-functions"><h3>Property Value Shorthand in Factory Functions</h3></a>
+<pre><code class="language-js">const createAnimal = (name, age) =&gt; {
+  return {
+    name,
+    age
+  }
+}
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="es06.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="oop_obj-methods.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
+                        
+                            <a rel="next" href="oop_classes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -160,11 +209,15 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="es06.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="oop_obj-methods.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
+                
+                    <a href="oop_classes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
