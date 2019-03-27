@@ -8,6 +8,8 @@
 	- [Truthly + Falsly](./basics-truthly.md)
 - [Strings](./strings.md)
 - [Arrays](./arrays.md)
+	- [Array Example](./arrays_example.md)
+	- [Array Functions](./arrays_functions.md)
 - [Math](./math.md)
 	- [Arithmetic Operators](./math-arithmeticoperators.md)
 - [Loops](./loops.md)
