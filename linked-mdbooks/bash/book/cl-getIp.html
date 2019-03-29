@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Terminal Shortcuts + VIM - bash-linux</title>
+        <title>getIp - bash-linux</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="linux.html"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts_and_vim.html" class="active"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts + VIM</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_installing_packages.html"><strong aria-hidden="true">2.6.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html"><strong aria-hidden="true">2.7.</strong> Users and Permissions</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="linux.html"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts.html"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases / .bash_history?</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_search.html"><strong aria-hidden="true">2.6.</strong> Searching (Find)</a></li><li><a href="bash_installing_packages.html"><strong aria-hidden="true">2.7.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html"><strong aria-hidden="true">2.8.</strong> Users and Permissions</a></li></ol></li><li><a href="cl-intro.html"><strong aria-hidden="true">3.</strong> CL programms</a></li><li><ol class="section"><li><a href="cl-pwgen.html"><strong aria-hidden="true">3.1.</strong> pwgen</a></li><li><a href="cl-oscer.html"><strong aria-hidden="true">3.2.</strong> oscer</a></li><li><a href="cl-md5sum.html"><strong aria-hidden="true">3.3.</strong> md5sum</a></li><li><a href="cl-getIp.html" class="active"><strong aria-hidden="true">3.4.</strong> getIp</a></li><li><a href="cl-localServer.html"><strong aria-hidden="true">3.5.</strong> Running Local Servers</a></li></ol></li><li><a href="vim.html"><strong aria-hidden="true">4.</strong> Vim</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -136,39 +136,23 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#terminal-shortcuts--vim" id="terminal-shortcuts--vim"><h1>Terminal Shortcuts + VIM</h1></a>
-<pre><code class="language-bash"># BASICS
-CTRL + L          # clear terminal output
-CTRL + C          # stop if there is a problem
-CTRL + D          # close terminal
-exit              # closes terminal
-
-# NAVIGATION
-CTRL + A          # go to start of line
-SHIFT + Ins       # paste clipboard (CTRL+v does not work)
+                        <a class="header" href="#getip" id="getip"><h1>getIp</h1></a>
+<pre><code class="language-bash"># WHAT IS MY IP? -&gt; doesnt work!
+wget http://Www.whatismyip.com -O - -o /dev/null | grep '&lt;TITLE&gt;' | sed -r 's/&lt;TITLE&gt;WhatIsMyIP\.com \- //g' | sed -r 's/&lt;\/TITLE&gt;//g'
 </code></pre>
-<a class="header" href="#never-execute-this-command-dangerous" id="never-execute-this-command-dangerous"><h2>never execute this command (dangerous!)</h2></a>
-<pre><code class="language-bash"># never execute this command (dangerous!)
-sudo rm -rF /  # will force to delete root
-</code></pre>
-<a class="header" href="#vim" id="vim"><h2>VIM</h2></a>
-<ul>
-<li>Vim is a TUI texteditor without fancy graphical user design.</li>
-<li>important to know when manipulating files on a server without graphical user interface</li>
-</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="bash.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="cl-md5sum.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="bash_bashrc_and_aliases.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="cl-localServer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -180,13 +164,13 @@ sudo rm -rF /  # will force to delete root
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="bash.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="cl-md5sum.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="bash_bashrc_and_aliases.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="cl-localServer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

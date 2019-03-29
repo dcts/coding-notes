@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="linux.html"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts_and_vim.html"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts + VIM</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_installing_packages.html"><strong aria-hidden="true">2.6.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html"><strong aria-hidden="true">2.7.</strong> Users and Permissions</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="linux.html"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts.html"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases / .bash_history?</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_search.html"><strong aria-hidden="true">2.6.</strong> Searching (Find)</a></li><li><a href="bash_installing_packages.html"><strong aria-hidden="true">2.7.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html"><strong aria-hidden="true">2.8.</strong> Users and Permissions</a></li></ol></li><li><a href="cl-intro.html"><strong aria-hidden="true">3.</strong> CL programms</a></li><li><ol class="section"><li><a href="cl-pwgen.html"><strong aria-hidden="true">3.1.</strong> pwgen</a></li><li><a href="cl-oscer.html"><strong aria-hidden="true">3.2.</strong> oscer</a></li><li><a href="cl-md5sum.html"><strong aria-hidden="true">3.3.</strong> md5sum</a></li><li><a href="cl-getIp.html"><strong aria-hidden="true">3.4.</strong> getIp</a></li><li><a href="cl-localServer.html"><strong aria-hidden="true">3.5.</strong> Running Local Servers</a></li></ol></li><li><a href="vim.html"><strong aria-hidden="true">4.</strong> Vim</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -271,7 +271,7 @@ CTRL + ALT + SHIFT + K       # computer shutdown (custom shortcut)
 <p><strong>Terminal</strong> (terminal emulator): programm to interact with the shell (bash).</p>
 <p><strong>TUI</strong>: textbased user interface (for example a terminal emulator or vim when running in a terminal).</p>
 <p><strong>GUI</strong>: graphical user interface -&gt; what most users are used to.</p>
-<a class="header" href="#terminal-shortcuts--vim" id="terminal-shortcuts--vim"><h1>Terminal Shortcuts + VIM</h1></a>
+<a class="header" href="#terminal-shortcuts" id="terminal-shortcuts"><h1>Terminal Shortcuts</h1></a>
 <pre><code class="language-bash"># BASICS
 CTRL + L          # clear terminal output
 CTRL + C          # stop if there is a problem
@@ -280,18 +280,19 @@ exit              # closes terminal
 
 # NAVIGATION
 CTRL + A          # go to start of line
-SHIFT + Ins       # paste clipboard (CTRL+v does not work)
+CTRL + SHIFT + c  # copy (CTRL+c does not work)
+CTRL + SHIFT + p  # paste (CTRL+v does not work)
 </code></pre>
 <a class="header" href="#never-execute-this-command-dangerous" id="never-execute-this-command-dangerous"><h2>never execute this command (dangerous!)</h2></a>
 <pre><code class="language-bash"># never execute this command (dangerous!)
 sudo rm -rF /  # will force to delete root
 </code></pre>
-<a class="header" href="#vim" id="vim"><h2>VIM</h2></a>
-<ul>
-<li>Vim is a TUI texteditor without fancy graphical user design.</li>
-<li>important to know when manipulating files on a server without graphical user interface</li>
-</ul>
 <a class="header" href="#bashrc--bash_aliases" id="bashrc--bash_aliases"><h1>.bashrc / .bash_aliases</h1></a>
+<pre><code class="language-bash"># files anschauen
+.profile
+.bashrc 
+.bash_aliases
+</code></pre>
 <a class="header" href="#basic-commands" id="basic-commands"><h1>Basic Commands</h1></a>
 <pre><code class="language-bash"># access system variables (date &amp; time)
 date          # current date and time
@@ -372,6 +373,10 @@ rm file.txt               # remove file
 # copying
 cp &lt;source&gt; &lt;target&gt;      # copy source file to target
 cp file file_copy         # copies &quot;file&quot; to &quot;file_copy&quot; in current directory
+</code></pre>
+<a class="header" href="#searching-find" id="searching-find"><h1>Searching (Find)</h1></a>
+<pre><code class="language-bash"># findet alle jggs (überall), gibt metadaten aus und wählt nur das Feld &quot;JFIF Version&quot; aus!
+find . -iname '*jpg' -exec exiftool {} \; | egrep &quot;JFIF Version&quot;
 </code></pre>
 <a class="header" href="#installing-packages" id="installing-packages"><h1>Installing Packages</h1></a>
 <p><strong>What's a Package Manager?</strong></p>
@@ -457,6 +462,31 @@ chmod a+xwe &lt;dir&gt;  # add all permission for all
 chmod u+e &lt;file&gt;   # add execute permission only for user
 chmod a-e &lt;file&gt;   # remove execute permission for all users
 chmod a-wr &lt;file&gt;  # remove write and read permission for all users
+</code></pre>
+<a class="header" href="#cl-programms" id="cl-programms"><h1>CL programms</h1></a>
+<a class="header" href="#pwgen" id="pwgen"><h1>pwgen</h1></a>
+<a class="header" href="#oscer" id="oscer"><h1>oscer</h1></a>
+<a class="header" href="#md5sum" id="md5sum"><h1>md5sum</h1></a>
+<pre><code># displays md5sum of &quot;pw1234&quot; -&gt; da0cc0d2a8e07b7fb902836e5a415c54
+echo -n pw1234 | md5sum
+
+# do not store command in history: (leading space before command!)
+ echo -n pw1234 | md5sum
+</code></pre>
+<a class="header" href="#getip" id="getip"><h1>getIp</h1></a>
+<pre><code class="language-bash"># WHAT IS MY IP? -&gt; doesnt work!
+wget http://Www.whatismyip.com -O - -o /dev/null | grep '&lt;TITLE&gt;' | sed -r 's/&lt;TITLE&gt;WhatIsMyIP\.com \- //g' | sed -r 's/&lt;\/TITLE&gt;//g'
+</code></pre>
+<a class="header" href="#running-local-servers" id="running-local-servers"><h1>Running Local Servers</h1></a>
+<a class="header" href="#vim" id="vim"><h1>Vim</h1></a>
+<ul>
+<li>Vim is a TUI texteditor without fancy graphical user design.</li>
+<li>important to know when manipulating files on a server without graphical user interface</li>
+</ul>
+<a class="header" href="#different-modes" id="different-modes"><h2>Different Modes</h2></a>
+<p>-&gt; switching modes!</p>
+<a class="header" href="#basic-shortcuts" id="basic-shortcuts"><h2>Basic Shortcuts</h2></a>
+<pre><code class="language-bash">
 </code></pre>
 
                     </main>

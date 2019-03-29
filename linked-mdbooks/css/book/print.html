@@ -310,6 +310,10 @@ p {color: blue !important}
 /* !important overrides even the id-selector!*/
 </code></pre>
 <a class="header" href="#backgrounds--images" id="backgrounds--images"><h1>Backgrounds / Images</h1></a>
+<pre><code class="language-css">/* TRANSPARENT FILTER ON IMAGES -&gt; makes text in front more visible */
+
+
+</code></pre>
 <a class="header" href="#colors" id="colors"><h1>Colors</h1></a>
 <p>There are 3 types how color can be displayed:</p>
 <ul>
@@ -462,7 +466,7 @@ font-size: 1em;
 font-style italic;
 font-weight: normal; /* = 400 */
 font-weight: bold;   /* = 700 */
-font-weight: 900; 	 /* valid values: 100,200,300,..,900 */
+font-weight: 900;    /* valid values: 100,200,300,..,900 */
 
 /* Text Decoration */ 
 text-decoration: none;
@@ -495,12 +499,51 @@ letter-spacing: 3px;
 <li>padding (Platz zwischen Rand und Inhalt)</li>
 <li>content (Inhalt)</li>
 </ul>
-<a class="header" href="#example" id="example"><h3>Example</h3></a>
+<a class="header" href="#example" id="example"><h1>Example</h1></a>
 <pre><code class="language-css">div {
     padding: 10px;
     border: 2px;
     margin: 10px;
 }
+</code></pre>
+<a class="header" href="#border" id="border"><h3>Border</h3></a>
+<pre><code class="language-css">/* thickness, style and color in 1 statement! */
+border: px style color;
+border: 12px solid red; /* dotted, dashed, double, none */
+
+/* make borders round */
+boder-radius: 10px
+boder-radius: 100% (=circle)
+</code></pre>
+<a class="header" href="#padding" id="padding"><h3>Padding</h3></a>
+<pre><code class="language-css">/* PADDING */ 
+padding: 10px; /* = on all sides 10px!*/
+
+/* same as...*/
+pading-top: 10px;
+pading-right: 10px;
+pading-bottom: 10px;
+pading-left: 10px;
+
+/* padding: v1 v2 v3 v4; -&gt; top / right / bottom / left 
+ * padding: v1 v2 v3;    -&gt; top / right+left / bottom
+ * padding: v1 v2;       -&gt; top+bottom / right+left
+ */
+</code></pre>
+<a class="header" href="#margin" id="margin"><h3>Margin</h3></a>
+<pre><code class="language-css">/* - same as padding concerning syntax
+ * - space between border and other elements!
+ * - margins add up horizontally!
+ * - margins collapse vertical (higher is applied)
+ */
+
+maring: 0 auto
+
+/* MIN / MAX SIZE */
+min-width: 200px;
+max-width: 400px;
+min-height: 200px;
+max-height: 400px;
 </code></pre>
 <a class="header" href="#open-questions" id="open-questions"><h1>OPEN QUESTIONS</h1></a>
 <ul>
