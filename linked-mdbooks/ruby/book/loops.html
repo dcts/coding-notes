@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ruby Loops - ruby</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="notes.html"><strong aria-hidden="true">1.</strong> Ruby Notes</a></li><li><a href="loops.html" class="active"><strong aria-hidden="true">2.</strong> Ruby Loops</a></li><li><a href="ruby-shoes.html"><strong aria-hidden="true">3.</strong> Ruby Shoes</a></li><li><a href="questions.html"><strong aria-hidden="true">4.</strong> QUESTIONS</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">ruby</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#ruby-loops" id="ruby-loops"><h1>Ruby Loops</h1></a>
+<pre><code class="language-ruby"># IF-ELSE
+num = 0
+if num&lt;0
+  puts &quot;negative number&quot;
+elsif num&gt;0
+  puts &quot;positive number&quot;
+else 
+  puts &quot;number equals 0&quot;
+end
+
+# short IF
+puts &quot;Its true&quot; if true
+
+# ternary If ELSE -&gt; NOT DOING ANYTHING, returning a result!!
+condition = false
+condition ? return_if_true : return_if_false
+</code></pre>
+<pre><code class="language-ruby"># SWITCH
+case language
+  when &quot;JS&quot;
+    puts &quot;Websites!&quot;
+  when &quot;Python&quot;
+    puts &quot;Science!&quot;
+  when &quot;Ruby&quot;
+    puts &quot;Web apps!&quot;
+  else
+    puts &quot;I don't know!&quot;
+end
+
+# fast switch
+case language
+  when &quot;JS&quot; then puts &quot;web&quot;
+  when &quot;html&quot; then puts &quot;web&quot;
+  when &quot;ruby&quot; then puts &quot;rails&quot;
+  else puts &quot;Error!&quot;
+end
+</code></pre>
+<pre><code class="language-ruby"># UNLESS (opposite of &quot;IF&quot;)
+problem = false
+unless problem	# if not
+  puts &quot;we have a problem&quot;
+else 
+  puts &quot;no problemo amigo!&quot;
+end
+# unless shortcut (when no &quot;else&quot; is needed)
+puts &quot;we have no problem&quot; unless problem	# short notation (same code)
+
+# UNLESS ONE LINER
+puts &quot;not true&quot; unless true
+</code></pre>
+<pre><code class="language-ruby"># WHILE
+i = 0
+while i&lt;5
+  puts i
+  i += 1
+end
+</code></pre>
+<pre><code class="language-ruby"># UNTIL (opposite of &quot;while&quot;)
+i += 1
+until i == 6
+  puts i
+  i += 1
+end
+</code></pre>
+<pre><code class="language-ruby"># FOR-Loop
+# include last number
+for num in 1..10		# 2 dots!
+  puts num
+end
+# exclude last number
+for num in 1...10		# 3 dots!
+  puts num
+end
+# with steps
+for num in (1..100).sep(10)   # 10er schritte 
+  puts num
+end
+
+# NEXT
+for i in 1..5
+  next if i % 2 == 0
+  print i
+end
+</code></pre>
+<pre><code class="language-ruby"># DO WHILE
+i = 1
+loop do 
+  puts i
+  i += 1
+  break if i &gt; 5
+end
+# DO SHORTCUT
+i = 1
+loop {  			# &quot;{&quot; replaces &quot;do&quot;
+  puts i
+  i += 1
+  break if i &gt; 5
+}					# &quot;}&quot; replaces &quot;end&quot;
+</code></pre>
+<pre><code class="language-ruby"># FOR EACH ELEMENT OF OBJECT
+array = [1,2,3,4,5]		# defining array
+#version 1
+array.each do |x|
+  puts x	
+end
+# alternative version (same code)
+array.each { |x| puts x }
+array.sort 					# sorts array ins ASC order (works for strings and numbers)
+
+# TIMES ITERATOR
+n = 10
+n.times { print &quot;hello\n&quot;}
+</code></pre>
+<pre><code class="language-ruby"># UPTO / DOWNTO BLOCKS
+95.upto(100) {|x| p x}
+15.downto(0) {|x| p x}
+&quot;A&quot;.upto(&quot;X&quot;) {|x| puts x}
+</code></pre>
+<pre><code class="language-ruby"># COLLECT /same as MAP
+# manipulates each element of an object and returns the full object
+array = [1,2,3,4]
+puts array.collect {|x| x+1} 	# returns manipulated object (new one)
+array.collect! {|x| x+1}		# object manipulation (add +1 to each item in the same array)
+array.map! {|x| x+1}	# map does the same than collect!
+
+# SELECT
+# selects each element of object given condition
+# .select! VS .select
+</code></pre>
+<pre><code class="language-ruby"># METHODS
+# methods must be defined before calling them! ruby doesnt &quot;search&quot; for methods 
+# define method
+def title(msg, n, del)
+  puts &quot; #{msg} &quot;.center(n, &quot;#{del}&quot;)
+end
+title(&quot;title1&quot;, 20, &quot;-&quot;) 	# call the method
+
+# SPLAT arguments (not neccessary but possible)
+def greeter(string, *friends) 
+  friends.each {|friend| puts &quot;#{string}, #{friend}&quot;}
+end
+
+# default parameters
+def my_reverse(val1, val2=false) 
+  val1.reverse!
+  if val2 
+    puts &quot;msg to console enabled!&quot;
+  end
+  # val2s default value is true
+end
+
+# IMPLICIT RETURN
+# -&gt; last executed action is returned
+def add(a,b)
+  a + b
+end
+</code></pre>
+<pre><code class="language-ruby"># BLOCKS (nameless methods)
+10.times do
+  puts &quot;hello!&quot;
+end
+10.times {puts &quot;hello!&quot;}
+
+# YIELDING
+def yield_name(name)
+  puts &quot;In the method! Let's yield.&quot;
+  yield(&quot;Kim&quot;)
+  puts &quot;In between the yields!&quot;
+  yield(name)
+  puts &quot;Block complete! Back in the method.&quot;
+end
+yield_name(&quot;Eric&quot;) { |x| puts &quot;My name is #{x}.&quot; }
+</code></pre>
+<pre><code class="language-ruby"># PROCS -&gt; blocks as methods!
+cube = Proc.new { |x| x ** 3 }
+# converting procs into blocks with &quot;&amp;&quot;
+&amp;cube # -&gt; proc converted to Block
+</code></pre>
+<pre><code class="language-ruby"># LAMBDAS #similar to procs
+# Like procs, lambdas are objects. The similarities don't stop there: with the exception
+# of a bit of syntax and a few behavioral quirks, lambdas are identical to procs.
+# syntax: lambda { |param| block }
+lambda_name = lambda { puts &quot;Im inside the lambda!&quot;}
+&amp;lambda_name # converts lambda to a block
+
+# LAMBDA VS PROC
+# - when inside a method, Proc returns immediately, lambda returns to the calling method
+# - lambda checks number of arguments! It will throw an error if it doesnt match. Procs dont do that
+</code></pre>
+<pre><code class="language-ruby"># CLASSES
+# nameConvetion: CamelCase  and Capitalized
+class Person		# class definition
+  @@person_count = 0
+  initialize(name)		# constructor
+    @name = name 		# @name is an instance variable (non-static fields in java)
+    @@person_count += 1	
+  end
+  # self. can be replaced by the Classname!
+  def self.number_of_instances		# instance methods! NON STATIC METHODS. Class-Methods in Java
+    return @@person_count
+  end
+end
+
+# VARIABLES/METHOD VISIBILITY &amp; CONCEPTS
+$variable	# global variables = making variables visible outside of its method
+@variable	# instance variables
+@@variable	# class variables: all instances of a class have access to THE SAME variable!
+
+# INHERITANCE
+# &lt; is read as &quot;inherits from&quot; or &quot;is a&quot;
+class Item
+  def say_smth
+    return &quot;im an item&quot;
+  end
+end
+class CD &lt; item 	# CD inherits from item (is-a relationship)
+  def say_smth		# when same class method names: overrides method of the &quot;upper&quot; class
+    return &quot;im a cd&quot;  	
+  end
+end
+
+# When you call super from inside a method, that tells Ruby to look in the superclass 
+# of the current class and find a method with the same name as the one from which super 
+# is called. If it finds it, Ruby will use the superclass' version of the method.
+
+# ONLY ONE INHERITANCE IN RUBY
+# Not allowing multiple inheritance
+
+# object.method (object is the &quot;RECIEVER&quot; of the method &quot;method&quot;)
+
+# Setter &amp; Getter
+class Person
+  attr_reader :name
+  attr_accessor :job
+  attr_writer :password
+  def initialize(name, job, password)
+    @name = name
+    @job = job
+    @password = password
+  end
+  
+  def name
+    @name
+  end
+  
+  def job=(new_job)		# ruby convention of setters: &quot;name_of_method=&quot; -&gt; the equals sign belongs to the name
+    @job = new_job
+  end
+end
+
+attr_writer :name   # setter function short. eg: Person.name=&quot;Mark&quot;
+attr_reader :name   # getter function short. eg: Person.name
+attr_accessor :name # setter + getter function initizalized!
+</code></pre>
+<pre><code class="language-ruby"># MODULES
+# similar to objects, but you cant initialize instances of them, the just STORE things
+module Circle
+  CONSTNAT_PI_ALL_CAPS = 3.14 # constants can be changed, but shouldnt! Ruby warns you if you want to do it
+end
+# accessing constant from outside the module (with two &quot;:&quot;)
+Circle::CONSTNAT_PI_ALL_CAPS 
+
+# importing modules
+require 'circle'  # import modules, always small_cases. You can acces the methods with Circle.method()
+include Circle    # only in class sphere, to import a module into a class!
+                  # imports so we dont need to use the ModuleName::GLOBAL_VAR notation and can just write GLOBAL_VAR
+
+
+# INCLUDING VS EXTENDING!
+module ThePresent
+  def now; puts Time.now; end
+end
+
+class TheHereAnd
+  extend ThePresent 
+  include ThePresent 
+end
+
+TheHereAnd.now          # access module method through extended (Class as whole acceses module method)
+TheHereAnd.new().now    # access module method through inclusion (instance of an object accesses method)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="notes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ruby-shoes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="notes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ruby-shoes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

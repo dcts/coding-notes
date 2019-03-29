@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ruby Notes - ruby</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="notes.html" class="active"><strong aria-hidden="true">1.</strong> Ruby Notes</a></li><li><a href="loops.html"><strong aria-hidden="true">2.</strong> Ruby Loops</a></li><li><a href="ruby-shoes.html"><strong aria-hidden="true">3.</strong> Ruby Shoes</a></li><li><a href="questions.html"><strong aria-hidden="true">4.</strong> QUESTIONS</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">ruby</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#ruby-notes" id="ruby-notes"><h1>Ruby Notes</h1></a>
+<pre><code class="language-ruby">#RUBY PROJECTS AS EXCERCISE
+# - game of life with GUI
+# - calculator
+# - sudoku solver (backpropagation)
+# - file input reader -&gt; word analyzer / char analyser
+
+# TAKE HOME
+# CRUD for create, read, update, and delete
+
+# TAKE HOME 2
+# Normally type checking is not done in Ruby, but instead objects are assessed
+# based on their ability to respond to particular methods, commonly called “Duck
+# typing”. In other words, if it responds to the methods you want, there’s no
+# reason to be particular about the type. 
+
+# TAKE HOME 3
+# almost everything is an object in ruby! Only exception are blocks!
+</code></pre>
+<pre><code class="language-ruby"># DATA TYPES IN RUBY
+- symbols # Symbols are unique identifiers that are considered code, not data
+- numbers # integer VS floats
+
+# while strings represent data that can change, symbols represent unique values, which are static.
+# if the text at hand is &quot;data&quot;, then use a string. If its code, then use a symbol, especially when used as keys in hashes
+
+# TESTING IN SANDBOX
+# ruby irb: TESTENVIRONMENT IN CMD
+irb   # start IRB = Interactive Ruby (Shell)
+irb 
+
+# DETERMINE DATA TYPE IN RUBY (anyways)
+p 1.instance_of? Integer   #=&gt; True
+p &quot;1&quot;.instance_of? String  #=&gt; True
+p [1,2].instance_of? Array #=&gt; True
+# alternative: is_a? (type)
+p 1.is_a? (Integer)       
+p &quot;string&quot;.is_a? (String) 
+
+# DISPLAY TO CONSOLE
+puts &quot;hello, World!&quot;	# adds newline at end
+print &quot;hello, World!&quot;	# no newline at end
+print &quot;hello,&quot;, 250, &quot; World&quot;   # print different types (separate by comma)
+
+# STRING OPERATIONS
+.chomp			# cuts last separotr? not sure yet.
+.upcase					# 
+.downcase				# Uppercase converted to downcase
+.capitalize				# First character capitalized, others converted to downcase
+.reverse				# returns reversed string
+.length					# returns length of string
+&quot;hello,World&quot;.split(&quot;,&quot;)	# splits string by delimitter, outputs array
+.strip() 				# eliminates leading and ending whitespaces
+.index()
+.center(6, '-')	
+&quot;Aksc&quot; &lt; &quot;B&quot;  # true! compares first letter! Capitalization is important though!
+
+# general substitution! replaces all instances of &quot;f&quot; with &quot;F&quot;
+.gsub(/f/, &quot;F&quot;)		
+.nil?				#check if value is nil	
+
+# title methods
+&quot;hi&quot;.center(6, '-')		# // --hi--
+&quot; hi &quot;.center(12, '-')	# // ---- hi ----
+
+# OBJECT MODIFIERS (shortcut)
+name.upcase!	# same as name = name.upcase
+name.gsub!(/f/, &quot;F&quot;)
+
+# QUESTIONMARK FUNCTIONS
+# general rule: functions ending with &quot;?&quot; evaluate to true/false
+.include? &quot;substring&quot;	# matches substring -&gt; returns true/false
+&quot;name&quot;.eql? &quot;name&quot;		# true
+&quot;name&quot;.eql? &quot;nam&quot;		# false
+&quot;name&quot;.include? &quot;m&quot;		# true
+&quot;name&quot;.include? &quot;x&quot;		# false
+&quot;name&quot;.index(&quot;a&quot;)		# 1
+&quot;name&quot;.index(&quot;me&quot;)		# 2
+
+# EQL? method can be used on all objects?
+1.eql? 1
+x = [1,2,3]
+x.eql? [1,2,3]
+
+# MTHODS FOR INTEGERS
+12.next   # // 13 (doesnt work for floats)
+
+
+&quot;Thomas Starzynski&quot;[0,3] 			# Tho
+&quot;Thomas Starzynski&quot;.index(&quot;Star&quot;) 	# 7
+&quot;Thomas Starzynski&quot;[7,1] 			# Starzynski
+
+# STRING INTERPOLATION vs CONCATENATION
+puts &quot;my name is #{name}&quot;	  # interpolation
+puts &quot;my name is &quot;+name     # concatenation
+puts &quot;my name is &quot; &lt;&lt; name  # concatenation with shovel (concatenation operator)
+
+
+# relational operations
+==	 	# equal
+!=		# not equal
+&lt;		# less than
+&lt;=		# less than or equal
+&gt;		# greater than
+&gt;=		# greater than or equal
+
+# logical / boolean operators
+&amp;&amp;		# and (short circuit)
+||		# or (short circuit)
+!		# not
+
+# why does short circuit matter?
+# -&gt; when having || the order is important
+# -&gt; it can happen that you can avoid throwing an exception by correct order
+
+# assignment shortcuts
+num += 1	# num = num + 1
+num -= 1	# num = num - 1
+
+# shovel parameter &lt;&lt;
+# to push something (push = add at the end)
+# e.g. push a new value to an array
+x = [1,2,3]
+x.push(4,5,6)
+x &lt;&lt; 7    # push multiple values is not possible with shovel right?
+
+x = [1,2,3]
+x.push(4,5,6)     # pushing multiple objects is easy with &quot;push&quot;
+x &lt;&lt; 7 &lt;&lt; 8 &lt;&lt; 9  # pushing one object is better with shovel
+</code></pre>
+<pre><code class="language-ruby"># conditional assignments!
+||=   # only assign value if there is no value assigned yet! (first checks the variable)
+name = &quot;asd&quot; unless name.nil?   # alternative to think about this operator
+# EXAMPLE CODE
+name = nil
+name ||= &quot;thomas&quot;   # name has not assigned a value yet (nil=no assignment), so it gets assigned
+name ||= &quot;sam&quot;      # since name is already assigned, nothing happens here
+
+# Multiple operations on one line
+print &quot;Hello, &quot;; puts &quot;world!&quot;; puts &quot; three&quot;;
+p &quot;Hello&quot;
+p [1,2,3,4].to_s
+
+# ARRAYS
+array = [1,2,3,4,5]		# create array with 5 numbers
+array[0]				# acces first element
+array.push(12)			# adds value to array at the end!
+
+string_array = [&quot;hello&quot;,&quot; &quot;,&quot;world&quot;,&quot;!&quot;]
+
+# MATRICES
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+matrix.each {|row| row.each {|x| puts x}}	# iterate over all elements
+
+# HASHES
+my_hash = { 		# HASH ROCKET STYLE =&gt;
+  key1 =&gt; value1,	# seperated with comma!!!
+  key2 =&gt; value2,	# seperated with comma!!!
+  key3 =&gt; value3	# no comma!!!
+}
+# creating hashes
+my_hash = Hash.new(default_value)	# without default value: Hash.new
+my_hash[key1] = value1
+my_hash[key2] = value2
+my_hash[key3] = value3
+# new syntax since ruby 1.9!!! (similar to javascript!)
+movies = {
+  start_wars: &quot;amazing film!&quot;,
+  titanic: &quot;but this ship can't sink!!&quot;,
+  troja: &quot;Heeeeectoooooorrrr!&quot;,
+}
+# call hash
+my_hash[key1]	# like an array
+# iterate over hash
+hash.each do |key,value| 
+  print &quot;key: #{key}, value: #{value}&quot;
+end
+# hash default value
+my_hash.each_key   		# iterate over all keys
+my_hash.each_value		# iterate over all values
+</code></pre>
+<pre><code class="language-ruby"># UNKLAR:
+freq = {
+  &quot;thomas&quot; =&gt; 1,
+  &quot;mark&quot; =&gt; 323,
+  &quot;alex&quot; =&gt; 15
+}
+freq = freq.sort_by do |key, val|
+  val
+end
+freq.reverse!
+# sorting by key or value
+freq = freq.sort_by {|key, val| key}
+</code></pre>
+<pre><code class="language-ruby"># MATH OPERATIONS
+2 + 2		# addition
+2 - 4		# subtraction
+2**3	 	# potenzbildung
+2/3			# dividing (integer)
+2.0/3		# dividing (float numbers)
+36 % 6	# modulo: remainder = 0
+37 % 6  #         remainder = 1
+&quot;Hello,&quot; &lt;&lt; &quot; world&quot; &lt;&lt; &quot;!&quot;   # concatenation operator (SHOVEL)
+
+.round(n)		# round with given precision precision (n = how many decimal places)
+2.342.round  	# = 2
+2.342.round(2) 	# = 2.34
+.ceil			
+2.342.ceil		# = 3
+.floor
+2.342.floor		# = 2
+</code></pre>
+<pre><code class="language-ruby"># SYMBOLS
+.object_id		# gets the id of an object
+:string 		# symbol &quot;called&quot; &quot;string&quot;. starts with &quot;:&quot;
+p :string.object_id == :string.object_id	# true
+p &quot;string&quot;.object_id == &quot;string&quot;.object_id 	# false
+
+.to_s		# converting symbol (or other types) to string
+.to_sym		# conversion to symbol
+.intern		# conversion to symbol (other variation doing the same thing)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+                            <a rel="next" href="loops.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+                    <a href="loops.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
