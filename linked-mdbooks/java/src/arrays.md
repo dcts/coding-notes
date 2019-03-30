@@ -24,7 +24,6 @@ matrix = new int[][];     // initialization
 int[][] matrix = new int[2][4]; 
 
 // direct initialization with values
-int[][] matrix = { {1,2} , {3,4} }; 
 ```
 
 
