@@ -1,0 +1,708 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>java</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="intro.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li><a href="basics.html"><strong aria-hidden="true">2.</strong> Basic Commands</a></li><li><a href="operators.html"><strong aria-hidden="true">3.</strong> Operators</a></li><li><a href="datatypes.html"><strong aria-hidden="true">4.</strong> Datatypes</a></li><li><ol class="section"><li><a href="datatypes-primitive.html"><strong aria-hidden="true">4.1.</strong> Primitive Datatypes</a></li><li><a href="datatypes-declarations.html"><strong aria-hidden="true">4.2.</strong> Declaration / Initialization / Scope</a></li><li><a href="datatypes-convertion.html"><strong aria-hidden="true">4.3.</strong> Converting Datatypes</a></li></ol></li><li><a href="strings.html"><strong aria-hidden="true">5.</strong> Strings</a></li><li><a href="arrays.html"><strong aria-hidden="true">6.</strong> Arrays</a></li><li><a href="math.html"><strong aria-hidden="true">7.</strong> Math</a></li><li><a href="loops.html"><strong aria-hidden="true">8.</strong> Loops / Conditionals</a></li><li><a href="snippets.html"><strong aria-hidden="true">9.</strong> Snippets</a></li><li><ol class="section"><li><a href="snippets-screencapture.html"><strong aria-hidden="true">9.1.</strong> ScreenCapture</a></li><li><a href="snippets-robot.html"><strong aria-hidden="true">9.2.</strong> Robot</a></li><li><a href="snippets-jframe.html"><strong aria-hidden="true">9.3.</strong> JFrame</a></li><li><a href="snippets-sqlConnection.html"><strong aria-hidden="true">9.4.</strong> SQL Connection</a></li><li><a href="snippets-selenium.html"><strong aria-hidden="true">9.5.</strong> Selenium</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">java</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#intro" id="intro"><h1>Intro</h1></a>
+<a class="header" href="#jre--jdk--ide" id="jre--jdk--ide"><h2>JRE / JDK / IDE</h2></a>
+<ul>
+<li><strong>JRE</strong> (Java Runtime Environment): includes the JVM (java virtual machine) and libraries. To <strong>run</strong> a program!</li>
+<li><strong>JDK</strong> (Java Development Kit): Includes the java compiler, needed to develop java programs!</li>
+<li><strong>IDE</strong> (Integrated Development Environment): a program like eclipse or netbeans, that automatically compiles the sourcecode before running the program.</li>
+</ul>
+<a class="header" href="#compiler" id="compiler"><h2>Compiler</h2></a>
+<p>Java is a compiled language, meaning that the source code needs to be transformed into bytecode by the java compiler! After compilation, the program can be run by the java virtual machine! Java files look like this:</p>
+<ul>
+<li><code>test.java</code>: sourcecode written in java-syntax! humanly readible!</li>
+<li><code>test.class</code>: bytecode (machine code), which can only be read and executed by the java virtual machine!</li>
+<li><code>.java</code> files are usually stored in <strong>src</strong> (source), while <code>.class</code> files are stored in <strong>bin</strong> (binary) directory.</li>
+</ul>
+<a class="header" href="#commandline" id="commandline"><h2>Commandline</h2></a>
+<pre><code class="language-bash"># check if java is installed (shows version)
+java -version 
+
+# compiles a .java file (creates .class file)
+javac Test.java
+
+# run compiled .class file (no file extension)
+java Test
+</code></pre>
+<a class="header" href="#basic-commands" id="basic-commands"><h1>Basic Commands</h1></a>
+<a class="header" href="#comments" id="comments"><h3>Comments</h3></a>
+<pre><code class="language-java">// line comment 
+
+/* block comment
+ * this is still part of the comment
+ * third line of comment
+/* 
+
+/** Java-doc comment */  // used to auto generate documentation!
+</code></pre>
+<a class="header" href="#example-code" id="example-code"><h3>Example Code</h3></a>
+<pre><code class="language-java">// import packages
+import javax.swing.JOptionPane;   // only «JOptionPane» 
+import javax.swing.*;             // whole package «swing»
+
+// class declaration
+public class Test () {
+    // main method (to make the program runnable)
+    public static void main(String[] args) {  
+        // print message to console
+        System.out.println(&quot;Hello World!&quot;);
+    }
+}
+</code></pre>
+<a class="header" href="#printing-to-console" id="printing-to-console"><h3>Printing to Console</h3></a>
+<pre><code class="language-java">// console out
+System.out.print(X);      // prints X (no newline)
+System.out.println(X);    // prints X (with newline at end)
+System.out.printf();      // more advanced console log method
+</code></pre>
+<a class="header" href="#operators" id="operators"><h1>Operators</h1></a>
+<pre><code class="language-java">/*  LOGICAL OPERATORS       | MATH OPERATORS
+----------------------------|-------------------------------
+==  ist gleich              | =  Zuweisung	
+!=  ist ungleich            | +  Addition / Konkatenation
+&gt;=  grösser-gleich          | -  Subtraktions-operator
+&lt;=  kleiner-gleich          | *  Multiplikations-operator
+&amp;   und                     | /  Divisions-operator
+&amp;&amp;  und (Short-Circuit)     | %  Modular-operator
+|   oder                    |
+||  oder (Short-Circuit)    |	
+
+
+INCREMENT / DECREMENT
+
+x++;    increment, then execute expression
+++x; 	execute expression, then increment
+x--;	decrement, then execute expression
+--x;	execute expression, then decrement
+
+
+SHORTHAND ASSIGNING
+
+x += 5;	  // same as: x = x + 5
+x -= 5;	  // same as: x = x – 5
+x /= 5;	  // same as: x = x / 5
+x *= 5;	  // same as: x = x * 5
+x %= 5;	  // same as: x = x % 5
+/*
+</code></pre>
+<a class="header" href="#datatypes" id="datatypes"><h1>Datatypes</h1></a>
+<a class="header" href="#primitive-datatypes" id="primitive-datatypes"><h1>Primitive Datatypes</h1></a>
+<pre><code class="language-java">byte byte1 = 127;                   // Byte [-128, 127]
+short short1 = 32000;               // Short [-32'000, 32'000]
+int int1 = 2100000000;              // Integer [-2.1 Mia, 2.1 Mia]
+long long1 = 9200000000000000000L;  // Long [-9.2 Trio, 9.2 Trio], with &quot;L&quot;
+float float1 = 3.14f;               // Float, add &quot;f&quot; at end
+double double1 = 3.14157;           // Double (higher precision)
+boolean boolean1 = (10&gt;2);          // bollean [true, false]
+char char1 = 'a';                   // Character
+char char2 = '\uXXXX';              // Character (UNICODE STYLE)
+String s1 = &quot;hello!&quot;;               // String (NOT A PRIMITIVE TYPE)
+</code></pre>
+<pre><code class="language-java">// DECLARATION
+double taxRate;
+</code></pre>
+<pre><code class="language-java">// INITIALIZATION
+taxRate = 0.57;
+</code></pre>
+<pre><code class="language-java">// IMMUTABLE VARIABLES -&gt; CONSTANTS
+final float pi = 3.14f;
+</code></pre>
+<pre><code class="language-java">// GLOBAL VARIABLES
+static int count = 0;          // visible inside the class
+static final float pi = 3.14f; // global constant
+</code></pre>
+<a class="header" href="#access-modifiers" id="access-modifiers"><h1>Access Modifiers</h1></a>
+<table><thead><tr><th>MODIFIER</th><th>class</th><th>Package</th><th>Subclass</th><th>World</th></tr></thead><tbody>
+<tr><td>public</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>protected</td><td>✓</td><td>✓</td><td>✓</td><td>x</td></tr>
+<tr><td>no modifier</td><td>✓</td><td>✓</td><td>x</td><td>x</td></tr>
+<tr><td>private</td><td>✓</td><td>x</td><td>x</td><td>x</td></tr>
+</tbody></table>
+<a class="header" href="#converting-datatypes" id="converting-datatypes"><h1>Converting Datatypes</h1></a>
+<pre><code class="language-java">// convert -&gt; STRING
+String s = Integer.toString(int1);         // int -&gt; String
+String s = &quot;&quot; + int1;                      // int -&gt; String
+String s = Double.toString(double1);       // double -&gt; String
+String s = &quot;&quot; + double1;                   // double -&gt; String
+String s = String.format(&quot;%.1f&quot;, double1); // double -&gt; String (1 decimal place)
+String s = new String(chAr);               // char[] -&gt; String
+char[] chAr = s.toCharArray();             // String -&gt; char[]
+
+// Array -&gt; String
+import java.util.Arrays;  // import Array Class
+Arrays.toString(iArr);    // convert
+
+// convert -&gt; INTEGER
+Integer.parseInt(s);            // String -&gt; int 
+Double.parseDouble(s);          // String -&gt; double
+Character.getNumericValue(ch);  // char -&gt; int
+
+// CASTEN
+(int)x                // x will be casted to int
+(double)x             // x will be casted to double
+(datatype)variable    // general syntax
+</code></pre>
+<a class="header" href="#strings" id="strings"><h1>Strings</h1></a>
+<pre><code class="language-java">String s1 = new String(&quot;Hallo Welt&quot;);     // Stringvariable
+String s2 = &quot;Hallo Welt&quot;;                 // Kurzschreibweise
+StringBuffer sb  = new StringBuffer();    // Erstellt StringBuffer
+StringBuffer sb2 = new StringBuffer(s1);  // Erstellt StringBuffer aus s1
+</code></pre>
+<a class="header" href="#escaping" id="escaping"><h2>Escaping</h2></a>
+<pre><code class="language-java">System.out.println(&quot;\n&quot;);      // newline
+System.out.println(&quot;\t&quot;);      // tab
+System.out.println(&quot;\\&quot;);      // backslash
+System.out.println(&quot;\&quot;&quot;);      // double quotes
+System.out.println(&quot;\'&quot;);      // single quotes
+System.out.println(&quot;\uXXXX&quot;);  // inser unicode character
+
+</code></pre>
+<a class="header" href="#string-functions" id="string-functions"><h2>String functions</h2></a>
+<pre><code class="language-java">// teststring
+String s = &quot;Hello World&quot;;
+
+// basic stringfunctions
+s.length();                 // returns 11
+s.substring(0,4);           // returns &quot;Hello&quot;
+
+
+// string comparison
+s.equals(&quot;HelloWorld!&quot;);    // true
+s.contains(&quot;World&quot;);        // true
+
+</code></pre>
+<a class="header" href="#string-formatting" id="string-formatting"><h2>String Formatting</h2></a>
+<pre><code class="language-java">// print formatted string
+System.out.printf();  // no newline!
+
+// store formatted string
+float f1 = 2.346f;
+String s = String.format(&quot;my number: %.2f&quot;, f1);
+
+// formatting options
+%d    // integer				
+%f    // float
+%.2f  // float with 2 digits		
+%s    // string	
+%S    // string in capital letters
+%c    // character
+%C    // CHARACTER capital print
+%b    // boolean
+%B    // BOOLEAN capital print
+
+// predefined string length:
+%-15s // left align  -&gt; puts spaces at end untill s.length() = 15
+%15s  // right align -&gt; puts spaces in front untill s.length() = 15 
+
+// example
+String s = String.format(&quot;%-15s&quot;, &quot;hallo&quot;);
+</code></pre>
+<a class="header" href="#string-buffer" id="string-buffer"><h2>String Buffer</h2></a>
+<pre><code class="language-java">// initialize empty string buffer
+StringBuffer sb = new StringBuffer();
+
+// initialize string buffer and fill with string str
+StringBuffer sb = new StringBuffer(str);
+
+</code></pre>
+<p>x = alle primitiven Datentypen od. char[]              
+s = String                 
+b = StringBuffer                   
+sb.length();    Länge des StringBuffers b
+sb.append(x);   Hängt x an b an
+sb.insert(pos, x);  einfügen von x an der Position pos!
+sb.replace(from, to, str);  ersetzt Buffer an Position from bis to mit str.
+sb.delete(from, to);        lösche Buffer an der Position from bis to!
+sb.setCharAt(pos, 'a'); setzt b[pos] auf 'a'
+sb.charAt(pos); Gibt die Stelle pos von b als char an den Rufer
+sb.substring(from);     Liefert Teilstring ab Index from
+sb.substring(from, to); Liefert Teilstring ab Index from bis to
+sb.length();        Länge des Buffers
+sb.toString();      Liefert Ihnalt des StringBuffers b als String</p>
+<p>s.substring(from);      Liefert Teilstring ab Index from
+s.substring(from, to);  Liefert Teilstring ab Index from bis to
+s.length();     Liefert Stringlänge
+s.contains(s2);     Patternmatching: liefert true/false
+int i = s.indexOf(s2);  Patternmatching: Integer i gibt Position wieder (oder -1 falls nicht gefunden)</p>
+<a class="header" href="#arrays" id="arrays"><h1>Arrays</h1></a>
+<pre><code class="language-java">// 2 step initialization
+int[] intArr;           // declaration
+intArr = new int[2];    // initialization with null's
+
+// direct initialization with nulls
+int[] intArr = new int[2];
+
+// direct initialization with values
+int[] intArr = {1,2,45};
+</code></pre>
+<a class="header" href="#matrices" id="matrices"><h2>Matrices</h2></a>
+<pre><code class="language-java">// 2 step initialization
+int[][] matrix;           // declaration
+matrix = new int[][];     // initialization
+
+// direct initialization with null's
+int[][] matrix = new int[2][4]; 
+
+// direct initialization with values
+int[][] matrix = {{1,2},{3,4}}; 
+</code></pre>
+<a class="header" href="#math" id="math"><h1>Math</h1></a>
+<pre><code class="language-java">// HOW TO USE MATH LIBRARY
+Math.function(inputs...);
+Math.random();
+</code></pre>
+<pre><code class="language-java">// MATH FUNCTIONS
+Math.abs(input);         // absolute value
+Math.round(input);       // round
+Math.ceil(double);       // round up
+Math.floor(double);      // round down
+Math.random(double);     // generates random double in range (0,1)
+Math.pow(2, 1.5);        // power function: 2^(1.5)
+Math.sqrt(double);       // square root (wurzel)
+Math.exp(5);             // exponential function e^5
+</code></pre>
+<a class="header" href="#loops--conditionals" id="loops--conditionals"><h1>Loops / Conditionals</h1></a>
+<ul>
+<li><a href="loops.html#if-else">if else</a></li>
+<li><a href="loops.html#switch">switch</a></li>
+<li><a href="loops.html#while">while</a></li>
+<li><a href="loops.html#">for</a></li>
+<li><a href="loops.html#for-each">for each</a></li>
+<li><a href="loops.html#break">multiple loops: break</a></li>
+</ul>
+<a class="header" href="#if-else" id="if-else"><h3><strong><code>if else</code></strong></h3></a>
+<pre><code class="language-java">if (condition == true) {
+    System.out.println(&quot;Do something...&quot;);
+} else if (condition2 == true) {
+    System.out.println(&quot;Do something else...&quot;);
+} else {
+    System.out.println(&quot;no condtition true!&quot;);
+}
+</code></pre>
+<a class="header" href="#switch" id="switch"><h3><strong><code>switch</code></strong></h3></a>
+<pre><code class="language-java">// example input
+int day = 5;
+
+/* dont forget to BREAK after each statement! otherwise 
+ * all the statements below will be executed as well!
+ */ 
+switch (day) {
+    case 1: 
+        System.out.println(&quot;monday&quot;);
+        break;                                 // break after each case
+    case 2: 
+        System.out.println(&quot;tuesday&quot;);
+        break;                                 // break after each case
+    case 3:
+        System.out.println(&quot;wednesday&quot;);
+        break;                                 // break after each case
+    case 4:
+        System.out.println(&quot;thursday&quot;);
+        break;                                 // break after each case
+    case 5:
+        System.out.println(&quot;friday&quot;);
+        break;                                // break after each case
+    case 6: case: 7                       // combine two cases
+        System.out.println(&quot;weekend!&quot;);
+        break;                                // break after each case
+    // DEFAULT will be run when no case is chosen! (similar to else)
+    default:
+        System.out.println(&quot;illegal input!&quot;);
+        // if default is last case no need to break
+        // add BREAK only when default is not last!
+}
+</code></pre>
+<a class="header" href="#while" id="while"><h3><strong><code>while</code></strong></h3></a>
+<pre><code class="language-java">boolean condition = true;
+while (condition == true) {
+    System.out.println(&quot;i will print this unless condition is met&quot;);
+    if (Math.random()&lt;0.1) {  // condition will be met with 10% probability
+        condition = false;
+    }
+}
+</code></pre>
+<a class="header" href="#for" id="for"><h3><strong><code>for</code></strong></h3></a>
+<pre><code class="language-java">for (int i=0; i&lt;=10; i++) {     // increment +1 each round
+    System.out.println(&quot;current run: &quot; + i);
+}
+</code></pre>
+<pre><code class="language-java">for (int i=0; i&lt;=10; i+=2) {    // increment +2 each round
+    System.out.println(&quot;current run: &quot; + i);
+}
+</code></pre>
+<pre><code class="language-java">for (int i=100; i&gt;=0; i-=10) {  // decrement +10 each round
+    System.out.println(&quot;current run: &quot; + i);
+}
+</code></pre>
+<a class="header" href="#for-each" id="for-each"><h3><strong><code>for each</code></strong></h3></a>
+<pre><code class="language-java">// int[]
+int[] zahlen = {1,4,7,2};
+for (int zahl : zahlen) {
+    System.out.println(zahl);
+}
+</code></pre>
+<pre><code class="language-java">// possible also for other more complex datatypes like HashMap, ArrayList or Objects!
+ArrayList&lt;String&gt; arrListStr = new ArrayList&lt;String&gt;();
+arrListStr.add(&quot;first string&quot;);
+arrListStr.add(&quot;second string&quot;);
+arrListStr.add(&quot;third string&quot;);
+for (String s : arrListStr) {
+    System.out.println(zahl);
+}
+</code></pre>
+<a class="header" href="#break" id="break"><h3><strong><code>break</code></strong></h3></a>
+<pre><code class="language-java">// Loop1 is a label for the first loop
+Loop1: 
+for (;;) {  // for (;;){} is an endless loop, same as while(true)
+    for (;;) {
+        statement; 
+        if (condition) { 
+             break Loop1;
+        }
+    }
+}
+</code></pre>
+<a class="header" href="#snippets" id="snippets"><h1>Snippets</h1></a>
+<a class="header" href="#screencapture" id="screencapture"><h1>ScreenCapture</h1></a>
+<ul>
+<li>example that reads each pixel of the screen</li>
+<li>input: each pixed</li>
+<li>output: manipulated pixels (overlay structure)
+<ul>
+<li>converts pixel into black and white.</li>
+<li>red border to show manipulated pixels!</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">import java.awt.*;
+import java.awt.image.*;
+
+public class Test {
+
+    public static void main(String[] args) throws AWTException {
+        int xLen = 1000;    // width of the layer
+        int yLen = 1000;    // height of the layer
+        Robot r = new Robot();
+        BufferedImage img = r.createScreenCapture(new Rectangle(0,0,xLen,yLen));
+
+        // create overlayer Window
+        Window w=new Window(null) {
+            @Override
+            public void update(Graphics g) {
+                paint(g);
+            }
+            @Override
+            public void paint(Graphics g) {
+                // compute for each pixel corresponding greyscale
+                for (int x=0; x&lt;xLen; x++) {
+                    for (int y=0; y&lt;yLen; y++) {
+                        // search for border-pixels!
+                        if (x==0 || y==0 || x==xLen-1 || y==yLen-1) {
+                            g.setColor(Color.RED);  // set borderColor to RED (255,0,0)
+                        } else {
+                            int rgb   = img.getRGB(x, y);
+                            int red   = (rgb &gt;&gt; 16) &amp; 0xFF;
+                            int green = (rgb &gt;&gt;  8) &amp; 0xFF;
+                            int blue  = (rgb      ) &amp; 0xFF;
+                            int grey  = ((red+green+blue)/3);
+                            g.setColor(new Color(grey, grey, grey));
+                        }
+                        // paint pixel 
+                        // (@toDo: check if method for painting single pixel exists)
+                        g.fillRect(x, y, 1, 1);		
+                    }
+                }
+            }
+        };
+        w.setAlwaysOnTop(true);
+        w.setBounds(w.getGraphicsConfiguration().getBounds());
+        w.setBackground(new Color(0, true));
+        w.setVisible(true);
+    }
+}
+</code></pre>
+<a class="header" href="#robot" id="robot"><h1>Robot</h1></a>
+<ul>
+<li>class can control keyboard and mouse of computer</li>
+</ul>
+<pre><code class="language-java">// import needed classes
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
+</code></pre>
+<pre><code class="language-java">// Initialization
+Robot robot = new Robot();
+</code></pre>
+<a class="header" href="#keyboard-controller" id="keyboard-controller"><h3>Keyboard Controller</h3></a>
+<ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/uiswing/events/keylistener.html">KeyListener</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/awt/event/KeyEvent.html">KeyEvent Documentation</a></li>
+</ul>
+<pre><code class="language-java">// PRESSING THE KEYBOARD
+// with key codes! -&gt; use KeyListener to find out int value of each key!
+robot.keyPress(10)    // press &quot;enter&quot; (enter keycode = 10)
+robot.keyRelease(10)  // release &quot;enter&quot;
+
+// with KeyEvent class
+robot.keyPress(KeyEvent.VK_ESCAPE);   // presses ESC
+robot.keyRelease(KeyEvent.VK_ESCAPE); // releases ESC
+
+// some Keys
+// see full documentation for KeyEvent for all keys
+KeyEvent.VK_ENTER;   // enter
+KeyEvent.VK_ESCAPE;  // ESC
+
+KeyEvent.VK_UP;      // arrow: up
+KeyEvent.VK_DOWN;    // arrow: down 
+KeyEvent.VK_LEFT;    // arrow: left
+KeyEvent.VK_RIGHT;   // arrow: right
+
+KeyEvent.VK_PERIOD;  // .
+KeyEvent.VK_EQUALS;  // =
+
+KeyEvent.VK_ALT;     // alt
+KeyEvent.VK_SHIFT;   // shift
+KeyEvent.VK_CONTROL; // crtl ? (not sure)
+
+KeyEvent.VK_NUMPAD0; // NUMPAD0 - NUMPAD9
+KeyEvent.VK_F1;   // F2,F3,F4,F5,F6,F7,F8,F9,F10,F11,F12
+</code></pre>
+<a class="header" href="#mouse-clicker" id="mouse-clicker"><h3>Mouse Clicker</h3></a>
+<ul>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/awt/event/InputEvent.html">InputEvent Documentation</a></li>
+</ul>
+<pre><code class="language-java">// CLICKING MOUSE
+robot.mousePress(InputEvent.BUTTON1_MASK);   // press leftclick
+robot.mouseRelease(InputEvent.BUTTON1_MASK); // release leftclick
+
+InputEvent.BUTTON1_MAST; // leftclick
+InputEvent.BUTTON2_MAST; // middlemouse
+InputEvent.BUTTON3_MAST; // rightclick
+
+robot.mouseWheel(1);  // scroll down
+robot.mouseWheel(3);  // scroll down (faster)
+robot.mouseWheel(-1); // scroll up 
+robot.mouseWheel(-3); // scroll up (faster)
+</code></pre>
+<a class="header" href="#jframe" id="jframe"><h1>JFrame</h1></a>
+<pre><code class="language-java">// initialize JFrame
+JFrame jf = new JFrame(&quot;TITLE&quot;);
+
+// JFrame methods
+jf.setTitle(&quot;changed title&quot;)     // sets new title
+jf.setVisible(true);             // make JFrame visible
+jf.setSize(width, heigth);       // set size of canvas	
+jf.setResizable(false);          // JFrame can be resized by user (Y/N?)
+jf.setLocation(xPos, yPos);      // set location of JFrame on the users screen!
+jf.setLocationRelativeTo(null);  // JFrame will appear in the middle of the screen. 
+                                 // Must be called after setting the size, but 
+                                 // before setting visible
+// set closing parameter (end program when user closes JFrame!)
+jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)	
+</code></pre>
+<a class="header" href="#selenium" id="selenium"><h1>Selenium</h1></a>
+<a class="header" href="#selenium-1" id="selenium-1"><h1>Selenium</h1></a>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
