@@ -465,19 +465,51 @@ chmod a-wr &lt;file&gt;  # remove write and read permission for all users
 </code></pre>
 <a class="header" href="#cl-programms" id="cl-programms"><h1>CL programms</h1></a>
 <a class="header" href="#pwgen" id="pwgen"><h1>pwgen</h1></a>
+<pre><code class="language-bash"># install
+apt-get install -y pwgen
+
+# generate 160 8-char random pw (memorable)
+pwgen 
+
+# generate 180 8-char random pw (SECURE)
+pwgen -s 
+
+# generate 14-char lenght passwords!
+pwgen -s 14 
+
+# generate 14-char length passwords (2 times)
+pwgen -s 14 2
+</code></pre>
 <a class="header" href="#oscer" id="oscer"><h1>oscer</h1></a>
 <a class="header" href="#md5sum" id="md5sum"><h1>md5sum</h1></a>
-<pre><code># displays md5sum of &quot;pw1234&quot; -&gt; da0cc0d2a8e07b7fb902836e5a415c54
+<pre><code class="language-bash"># displays md5sum of &quot;pw1234&quot; -&gt; da0cc0d2a8e07b7fb902836e5a415c54
 echo -n pw1234 | md5sum
 
 # do not store command in history: (leading space before command!)
+# only works in BASH
  echo -n pw1234 | md5sum
 </code></pre>
 <a class="header" href="#getip" id="getip"><h1>getIp</h1></a>
 <pre><code class="language-bash"># WHAT IS MY IP? -&gt; doesnt work!
 wget http://Www.whatismyip.com -O - -o /dev/null | grep '&lt;TITLE&gt;' | sed -r 's/&lt;TITLE&gt;WhatIsMyIP\.com \- //g' | sed -r 's/&lt;\/TITLE&gt;//g'
+
+# get public ip
+alias ippub=&quot;curl https://api.ipify.org/ &amp;&amp; echo &quot;; # echo to avoid % at end
+
+# get local ip
+alias iploc=&quot;ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'&quot;;
 </code></pre>
 <a class="header" href="#running-local-servers" id="running-local-servers"><h1>Running Local Servers</h1></a>
+<pre><code class="language-bash"># live-server 
+# -&gt; automatically reloads when changes are saved!
+cd targetDir
+live-server
+
+# http-server (reload needed!)
+# -&gt; serves also on public ip address
+cd targetDir
+http-server
+</code></pre>
 <a class="header" href="#vim" id="vim"><h1>Vim</h1></a>
 <ul>
 <li>Vim is a TUI texteditor without fancy graphical user design.</li>
@@ -510,21 +542,6 @@ wget http://Www.whatismyip.com -O - -o /dev/null | grep '&lt;TITLE&gt;' | sed -r
 
         </div>
 
-        
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         
 
         

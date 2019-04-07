@@ -137,6 +137,16 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#running-local-servers" id="running-local-servers"><h1>Running Local Servers</h1></a>
+<pre><code class="language-bash"># live-server 
+# -&gt; automatically reloads when changes are saved!
+cd targetDir
+live-server
+
+# http-server (reload needed!)
+# -&gt; serves also on public ip address
+cd targetDir
+http-server
+</code></pre>
 
                     </main>
 
@@ -175,21 +185,6 @@
 
         </div>
 
-        
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         
 
         

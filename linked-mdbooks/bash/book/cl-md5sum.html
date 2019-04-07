@@ -137,10 +137,11 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#md5sum" id="md5sum"><h1>md5sum</h1></a>
-<pre><code># displays md5sum of &quot;pw1234&quot; -&gt; da0cc0d2a8e07b7fb902836e5a415c54
+<pre><code class="language-bash"># displays md5sum of &quot;pw1234&quot; -&gt; da0cc0d2a8e07b7fb902836e5a415c54
 echo -n pw1234 | md5sum
 
 # do not store command in history: (leading space before command!)
+# only works in BASH
  echo -n pw1234 | md5sum
 </code></pre>
 
@@ -181,21 +182,6 @@ echo -n pw1234 | md5sum
 
         </div>
 
-        
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         
 
         

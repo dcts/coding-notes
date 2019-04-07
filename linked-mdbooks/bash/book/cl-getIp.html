@@ -139,6 +139,12 @@
                         <a class="header" href="#getip" id="getip"><h1>getIp</h1></a>
 <pre><code class="language-bash"># WHAT IS MY IP? -&gt; doesnt work!
 wget http://Www.whatismyip.com -O - -o /dev/null | grep '&lt;TITLE&gt;' | sed -r 's/&lt;TITLE&gt;WhatIsMyIP\.com \- //g' | sed -r 's/&lt;\/TITLE&gt;//g'
+
+# get public ip
+alias ippub=&quot;curl https://api.ipify.org/ &amp;&amp; echo &quot;; # echo to avoid % at end
+
+# get local ip
+alias iploc=&quot;ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'&quot;;
 </code></pre>
 
                     </main>
@@ -178,21 +184,6 @@ wget http://Www.whatismyip.com -O - -o /dev/null | grep '&lt;TITLE&gt;' | sed -r
 
         </div>
 
-        
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            var socket = new WebSocket("ws://localhost:3001");
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload(true); // force reload from server (not from cache)
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
         
 
         
