@@ -17,5 +17,8 @@
 	- [md5sum](./cl-md5sum.md)
 	- [getIp](./cl-getIp.md)
 	- [Running Local Servers](./cl-localServer.md)
+	- [Imagemagic](./cl-imagemagick.md)
+  - [jq](./cl-jq.md)
+  - [window display](./cl-window.md)
 
 - [Vim](./vim.md)
