@@ -20,5 +20,6 @@
 	- [Imagemagic](./cl-imagemagick.md)
   - [jq](./cl-jq.md)
   - [window display](./cl-window.md)
+  - [clipboard copy](./cl-clipboard.md)
 
 - [Vim](./vim.md)

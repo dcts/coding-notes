@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Navigation - bash-linux</title>
+        <title>clipboard copy - bash-linux</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="linux.html"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts.html"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases / .bash_history?</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html" class="active"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_search.html"><strong aria-hidden="true">2.6.</strong> Searching (Find)</a></li><li><a href="bash_installing_packages.html"><strong aria-hidden="true">2.7.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html"><strong aria-hidden="true">2.8.</strong> Users and Permissions</a></li></ol></li><li><a href="cl-intro.html"><strong aria-hidden="true">3.</strong> CL programms</a></li><li><ol class="section"><li><a href="cl-pwgen.html"><strong aria-hidden="true">3.1.</strong> pwgen</a></li><li><a href="cl-oscer.html"><strong aria-hidden="true">3.2.</strong> oscer</a></li><li><a href="cl-md5sum.html"><strong aria-hidden="true">3.3.</strong> md5sum</a></li><li><a href="cl-getIp.html"><strong aria-hidden="true">3.4.</strong> getIp</a></li><li><a href="cl-localServer.html"><strong aria-hidden="true">3.5.</strong> Running Local Servers</a></li><li><a href="cl-imagemagick.html"><strong aria-hidden="true">3.6.</strong> Imagemagic</a></li><li><a href="cl-jq.html"><strong aria-hidden="true">3.7.</strong> jq</a></li><li><a href="cl-window.html"><strong aria-hidden="true">3.8.</strong> window display</a></li><li><a href="cl-clipboard.html"><strong aria-hidden="true">3.9.</strong> clipboard copy</a></li></ol></li><li><a href="vim.html"><strong aria-hidden="true">4.</strong> Vim</a></li></ol>
+            <ol class="chapter"><li><a href="linux.html"><strong aria-hidden="true">1.</strong> LINUX Basics</a></li><li><a href="bash.html"><strong aria-hidden="true">2.</strong> Bash</a></li><li><ol class="section"><li><a href="bash_shortcuts.html"><strong aria-hidden="true">2.1.</strong> Terminal Shortcuts</a></li><li><a href="bash_bashrc_and_aliases.html"><strong aria-hidden="true">2.2.</strong> .bashrc / .bash_aliases / .bash_history?</a></li><li><a href="bash_basic_commands.html"><strong aria-hidden="true">2.3.</strong> Basic Commands</a></li><li><a href="bash_navigation.html"><strong aria-hidden="true">2.4.</strong> Navigation</a></li><li><a href="bash_manipulating_files.html"><strong aria-hidden="true">2.5.</strong> Manipulating Files</a></li><li><a href="bash_search.html"><strong aria-hidden="true">2.6.</strong> Searching (Find)</a></li><li><a href="bash_installing_packages.html"><strong aria-hidden="true">2.7.</strong> Installing Packages</a></li><li><a href="bash_users_and_permissions.html"><strong aria-hidden="true">2.8.</strong> Users and Permissions</a></li></ol></li><li><a href="cl-intro.html"><strong aria-hidden="true">3.</strong> CL programms</a></li><li><ol class="section"><li><a href="cl-pwgen.html"><strong aria-hidden="true">3.1.</strong> pwgen</a></li><li><a href="cl-oscer.html"><strong aria-hidden="true">3.2.</strong> oscer</a></li><li><a href="cl-md5sum.html"><strong aria-hidden="true">3.3.</strong> md5sum</a></li><li><a href="cl-getIp.html"><strong aria-hidden="true">3.4.</strong> getIp</a></li><li><a href="cl-localServer.html"><strong aria-hidden="true">3.5.</strong> Running Local Servers</a></li><li><a href="cl-imagemagick.html"><strong aria-hidden="true">3.6.</strong> Imagemagic</a></li><li><a href="cl-jq.html"><strong aria-hidden="true">3.7.</strong> jq</a></li><li><a href="cl-window.html"><strong aria-hidden="true">3.8.</strong> window display</a></li><li><a href="cl-clipboard.html" class="active"><strong aria-hidden="true">3.9.</strong> clipboard copy</a></li></ol></li><li><a href="vim.html"><strong aria-hidden="true">4.</strong> Vim</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -136,34 +136,24 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#navigation" id="navigation"><h1>Navigation</h1></a>
-<pre><code class="language-bash"># changing directory
-pwd           # print working directory
-cd PATH       # change directory (absolute or relative Path)
-cd            # change directory to user home folder  
-cd ~          # change directory to user home folder
-cd /          # change directory to root folder
-cd ..         # go one level up (to parent directory)
-cd -          # switches working directory to previous wd (back and forth)
-~             # home folder of current user
-~dcts         # home folder of user &quot;dcts&quot;
+                        <a class="header" href="#clipboard-copy" id="clipboard-copy"><h1>clipboard copy</h1></a>
+<ul>
+<li><a href="https://stackoverflow.com/a/5130969/6272061">STACKOVERFLOW</a></li>
+</ul>
+<pre><code class="language-bash"># install program
+sudo apt-get install xclip
 
-# paths
-/             # root folder
-.             # current directory
-./            # current relative path
-..            # parent directory
-../           # parent relative path
+# paste content to global clipboard!
+# include -selection c
+echo &quot;clipboard content&quot; | xclip -selection c
 
-# listing content
-ls              # lists all files and folders in the current directory
-ls -a           # show also all .-files (hidden)
-ls -l           # long format
-ls -l -a        # two options
-ls -la          # short version with two options
-ls path1 path2  # ls can take also 2 inputs
-ll              # show also hidden files (long format)
-ll path1 path2  # ll can take also 2 inputs
+# past to &quot;local&quot;/&quot;temp&quot; clipboard
+echo &quot;hello worl!&quot; &gt;&gt; file.txt
+cat file.txt | xclip
+xclip -o # =&gt; &quot;hello world&quot;
+
+# maybe a usefull alias?
+alias cb=&quot;xclip -selection c&quot;
 </code></pre>
 
                     </main>
@@ -171,13 +161,13 @@ ll path1 path2  # ll can take also 2 inputs
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="bash_basic_commands.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="cl-window.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="bash_manipulating_files.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="vim.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -189,13 +179,13 @@ ll path1 path2  # ll can take also 2 inputs
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="bash_basic_commands.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="cl-window.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="bash_manipulating_files.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="vim.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

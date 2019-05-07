@@ -50,6 +50,9 @@ https://fontface.ninja/
 Placeholder images (free to download and use):
 https://unsplash.com/
 https://www.pexels.com/
+Random placeholder image:
+https://picsum.photos/200/400
+https://source.unsplash.com/random
 
 Icons:
 https://thenounproject.com/
@@ -71,9 +74,6 @@ https://uimovement.com/
 
 UI Design guide (MUST READ):
 https://goodui.org/
-
-Random placeholder image:
-https://picsum.photos/
 
 If any of you has a site they love using feel free to add it to the list! :erröten:
 
