@@ -38,3 +38,10 @@ alias sayHello="echo 'hello World!'";  # hello World programm
 alias goToHome="cd ~";                 # unneccessary but possible
 
 ```
+
+```bash
+# RUN PROZESSES IN BACKGROUND!
+CTRL-z
+bg
+CTRL+D / exit
+```

@@ -80,6 +80,43 @@ If any of you has a site they love using feel free to add it to the list! :errö
 -> http://www.webdesigner.world/
 ```
 
+
+```
+RESOURCES BY MARTIN (teacher LeWagon)
+*Colors:*
+https://colorhunt.co/
+https://coolors.co/
+https://color.adobe.com/create/color-wheel/
+https://uigradients.com
+
+*Fonts:*
+https://fonts.google.com/
+https://fontpair.co/
+www.dafont.com
+www.myfonts.com
+
+*Placeholder images (free to download and use):*
+https://unsplash.com/
+https://www.pexels.com/
+
+*Icons:*
+https://thenounproject.com/
+https://iconstore.co/
+flaticon.com
+
+*(Web)Design inspiration:*
+https://dribbble.com/
+https://www.awwwards.com/
+https://www.producthunt.com
+
+UI Components Inspiration that I showed you during the lecture.
+https://calltoidea.com/
+https://uimovement.com/
+
+*ALL YOU NEED IN ONE STOP:*
+http://www.webdesigner.world/
+```
+
 ### Landing Page
 - clear value proposition
 - clear design
