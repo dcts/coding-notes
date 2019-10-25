@@ -15,6 +15,9 @@ git pull       # pull lates without destroying local changes
 git push origin master
 
 # pull branch from remote (only works if you have one remote)
+# show all branches that are on the remote
+git branch -r
+
 # - pull branch "test" from remote
 git fetch # fetches all branches from remote (not saved as branches locally yet)
 git checkout test # saves the branch test from the remote and makes it locally availible
